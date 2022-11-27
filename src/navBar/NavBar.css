@@ -1,0 +1,66 @@
+.nB__container{
+    outline: solid red 1px;
+    width: 100%;
+    font-family: var(--font-family-sans-serif);
+    text-transform: uppercase;
+    display: flex;
+    justify-content: center;
+}
+
+
+
+.nB__box{
+    width: 100%;
+    padding: 20px 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+                                                            /* LOGO CONTAINER */
+.nB__logo-container{
+    flex: 1 1 0;
+}
+.nB__logo{
+    width: 100%;
+}
+
+                                                            /* NAV MENU */
+.nB__menu{
+    display: flex;
+    flex: 2 1 0;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 20px 10px;
+    list-style: none;
+}
+
+.nB__menu-item button{
+    outline: none;
+    border: none;
+    background-color: transparent;
+    margin-left: 15px;
+    text-transform: uppercase;
+    font-weight: var(--font-weight-m);    
+    cursor: pointer;
+}
+
+                                                            /* NAV ICONS */
+.nB__icons-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    flex: 1 1 0;
+    justify-content: space-around;
+}
+
+.nB__icon-container{
+    display: flex;
+    cursor: pointer;
+}
+
+.nB__icon{
+    width: 15px;
+    cursor: pointer;
+}
