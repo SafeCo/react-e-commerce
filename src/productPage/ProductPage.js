@@ -11,32 +11,67 @@ function ProductPage() {
             .catch(error => console.log(error))
     },[])
 
-    const sortByPrice = ()=>{
-        setProductList(
-            productList
-            .map((product)=>product)
-            .sort((a , b)=>{
-                return parseFloat(a.price) - parseFloat(b.price)
-            })
-        )
+    const sortBy = (sort)=>{
+        switch(sort){
+            case "Price: Low to High":
+                setProductList(
+                    productList
+                    .map((product)=>product)
+                    .sort((a , b)=>{
+                        return parseFloat(a.price) - parseFloat(b.price)
+                    })
+                )
+                break;
+            case "Price: High to Low":
+                setProductList(
+                    productList
+                    .map((product)=>product)
+                    .sort((a , b)=>{
+                        return parseFloat(b.price) - parseFloat(a.price)
+                    })
+                )
+                break;
+            case "Highest rated":
+                setProductList(
+                    productList
+                    .map((product)=>product)
+                    .sort((a , b)=>{
+                        return parseFloat(b.rating.rate) - parseFloat(a.rating.rate)
+                    })
+                )
+                break;
+            
+        }
+        
     }
     
 
     return (
         <>
+            <div className="test">
+            <div className="test">hello</div>
+            <div className="test">My</div><div className="test">name</div>
+
+            </div>
             <div className="productPage__container">
                 <div className="productPage__filterBar">
-                    
+                    <label htmlFor="sort" >Sort by:</label>
+                    <select onChange={(e)=>{sortBy(e.target.value)}} name="sort">
+                        <option></option>
+                        <option>Price: Low to High</option>
+                        <option>Price: High to Low</option>
+                        <option>Highest rated</option>
+                    </select>
                 </div>
-                <button onClick={()=>{sortByPrice()}}>
-                Test
-                </button>
-                <div className="productPage__product-container">
-                {
-                    productList.map((product) => {
-                        return (<Product key={product.id} product={product} />)
-                    })
-                }
+                
+                <div className="productPage__products-container">
+                    <div className="productPage__products">
+                        {
+                            productList.map((product) => {
+                                return (<Product key={product.id} product={product} />)
+                            })
+                        }
+                    </div>
                 </div> 
             </div>
             

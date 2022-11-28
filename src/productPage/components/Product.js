@@ -16,18 +16,18 @@ function Product({product}) {
 
     return (
         <div className="product__container">
-            <div className=" temp product__image-container">
-                <img src={product.image} className="product__image" alt={product.title}/>
-            </div>
-            <div className=" temp product__title-container">
-                <p className="product__title">{product.title}</p>
-            </div>
-            <div className=" temp product__price-container">
-                <p>{"£" + product.price}</p>
-            </div>
-            <div className="product__button-container" >
-                <button className="product__button">ADD TO CART</button>
-            </div>
+                <div className="product__image-container">
+                    <img src={product.image} className="product__image" alt={product.title}/>
+                </div>
+                <div className="product__title-container">
+                    <p className="product__title">{product.title}</p>
+                </div>
+                <div className="product__price-container">
+                    <p>{"£" + product.price}</p>
+                </div>
+                <div className="product__button-container" >
+                    <button className="product__button">ADD TO CART</button>
+                </div>
         </div>
     )
 }
