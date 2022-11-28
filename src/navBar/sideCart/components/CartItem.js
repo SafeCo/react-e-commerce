@@ -1,8 +1,12 @@
-import React from 'react'
+import {useEffect, useState} from 'react'
 import "./CartItem.css"
 
 function CartItem() {
+    const [value, setValue] = useState(0)
 
+    // useEffect(()=>{
+    //     setValue(item.quantity)
+    // },[])
     const item  = {
             "id": 1,
             "title": "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
@@ -15,6 +19,18 @@ function CartItem() {
                 "count": 120
             }
         }
+    
+    const updateValue= (action)=>{
+        if(action === "increase"){
+            console.log("increase")
+            setValue(parseInt(value) + 1)
+        } else if( action === "decrease"){
+            console.log("increase")
+            setValue(parseInt(value) -1 )
+        } else{
+            setValue(action.target.value)
+        }
+    }
 
   return (
     <div className="cartItem__container">
@@ -40,10 +56,10 @@ function CartItem() {
         </div>
         <div className="cartItem__input-container">
             <div className="cartItem__input-box">
-                <input type="number" className="cartItem__input"  />
+                <input type="number" className="cartItem__input" onChange={(e)=>{updateValue(e)}} value={value}  />
                 <div className="cartItem__input-buttons">
-                    <button className="cartItem__input-button" >+</button>
-                    <button className="cartItem__input-button">-</button>
+                    <button onClick={()=>updateValue("increase")} name="increase" className="cartItem__input-button" >+</button>
+                    <button onClick={()=>updateValue("decrease")} name="decrease" className="cartItem__input-button">-</button>
                 </div>
             </div>
             
