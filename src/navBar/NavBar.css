@@ -1,4 +1,5 @@
 .nB__container{
+    position: relative;
     outline: solid red 1px;
     width: 100%;
     font-family: var(--font-family-sans-serif);

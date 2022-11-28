@@ -1,9 +1,15 @@
 import React from 'react'
+import {useOutletContext} from "react-router-dom";
+
 
 function CartPage() {
-  return (
+    const [cart, setCart] = useOutletContext()
+
+    
+
+    return (
     <div>CartPage</div>
-  )
+    )
 }
 
 export default CartPage

@@ -1,0 +1,23 @@
+.sideCart__container{
+    position: absolute;
+    /* background-color: rgba(0, 0, 0, 0.5) ; */
+    height: 100vh;
+    width: 50%;
+    /* width: 100%; */
+    top: 0;
+    /* display: flex;
+    justify-content: flex-end; */
+}
+.sideCart__box{
+    background-color: white;
+    border: solid red 2px;
+    height: 100%;
+    width: fit-content;
+}
+.sideCart__header{
+    display: flex;
+}
+
+.sideCart__items{
+    display: flex;
+}

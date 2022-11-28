@@ -5,6 +5,7 @@ import accountIcon from "./account-icon.svg"
 import searchIcon from "./search-icon.svg"
 import cartIcon from "./shopping-cart-icon.svg"
 import "./NavBar.css";
+import SideCart from './sideCart/SideCart';
 
 function NavBar() {
 
@@ -74,6 +75,7 @@ function NavBar() {
                     </div>
                 </div>
             </div> 
+            <SideCart cart={cart} setCart={setCart}/>
             <Outlet context={[cart, setCart]}/>
         </>
     

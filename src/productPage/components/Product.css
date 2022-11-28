@@ -1,7 +1,6 @@
 
 
 .product__container{
-    border: solid green 2px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -13,15 +12,9 @@
 
 }
 
-.temp{
-    border: solid orange 2px;
-}
-
-
                                                     /* IMAGE */
 .product__image-container{
     width: 100%;
-    border: solid green 1px;
 }
 .product__image{
     height: 100%;

@@ -1,19 +1,16 @@
 .productPage__container{
-    border: solid red 2px;
     display: flex;
     flex-direction: column;
     
 }
 
 .productPage__products-container{
-    border: solid green 3px;
     display: flex;
     justify-content: center;
     padding: 20px;
     
 }
 .productPage__products{
-    border: solid blue 2px;
     width: 100%;
     display: grid;
     gap: 10px;
