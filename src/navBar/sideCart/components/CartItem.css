@@ -22,7 +22,7 @@
     border: solid red 1px;
     display: flex;
     flex-direction: column;
-    max-width: 250px;
+    width: 250px;
 }
 
 .cartItem__title{

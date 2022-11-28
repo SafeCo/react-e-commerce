@@ -4,6 +4,7 @@ import cartIcon from "../shopping-cart-icon.svg"
 import CartItem from './components/CartItem'
 
 function SideCart({cart, setCart}) {
+    console.log(cart)
     return (
         <div className="sideCart__container">
             <div className="sideCart__box">
@@ -21,7 +22,14 @@ function SideCart({cart, setCart}) {
                     </div>
                 </header>
                 <main className="sideCart__items">
-                <CartItem cart={cart}/>
+                { cart ?
+                    cart.map((item)=>{
+                        return <CartItem item={item}/>
+                    })
+                    :
+                    null
+                }
+
                 </main>
 
             </div>
