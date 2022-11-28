@@ -1,6 +1,6 @@
 import "./Product.css"
 
-function Product({product}) {
+function Product({product, updateCart}) {
     // const test  = {
     //     "id": 1,
     //     "title": "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
@@ -12,7 +12,7 @@ function Product({product}) {
     //         "rate": 3.9,
     //         "count": 120
     //     }
-    // }
+    // 
 
     return (
         <div className="product__container">
@@ -26,7 +26,12 @@ function Product({product}) {
                     <p>{"£" + product.price}</p>
                 </div>
                 <div className="product__button-container" >
-                    <button className="product__button">ADD TO CART</button>
+                    <button 
+                    onClick={()=>{updateCart(product)}}
+                    className="product__button"
+                    >
+                        ADD TO CART
+                    </button>
                 </div>
         </div>
     )

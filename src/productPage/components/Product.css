@@ -6,7 +6,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    max-width: 300px;
+    aspect-ratio: 1/1;
     /*    
     width: 100%; */
     /* margin: 20px 10px; */
@@ -21,13 +21,12 @@
                                                     /* IMAGE */
 .product__image-container{
     width: 100%;
-    height: 250px;
     border: solid green 1px;
-    aspect-ratio: 1/1;
 }
 .product__image{
     height: 100%;
     width: 100%;
+    aspect-ratio: 1/1;
     object-fit: contain;
     cursor: pointer;
 }
@@ -53,6 +52,7 @@
 
 .product__button{
     border: solid #53c563 1px;
+    cursor: pointer;
     color: white;
     border-radius: 3px;
     background-color: #53c563;

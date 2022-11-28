@@ -2,6 +2,7 @@ import { Route, Routes } from "react-router-dom";
 import NavBar from "./navBar/NavBar";
 import "./App.css"
 import ProductPage from "./productPage/ProductPage";
+import CartPage from "./cartPage/CartPage";
 
 
 function App() {
@@ -9,6 +10,7 @@ function App() {
     <Routes>
       <Route path="/" element={ <NavBar/> } >
         <Route path="/" element={ <ProductPage/> }  />
+        <Route path="/cart" element={ <CartPage/> }  />
       </Route>
     </Routes>
   );

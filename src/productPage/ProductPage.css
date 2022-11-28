@@ -9,14 +9,13 @@
     border: solid green 3px;
     display: flex;
     justify-content: center;
+    padding: 20px;
     
 }
 .productPage__products{
     border: solid blue 2px;
     width: 100%;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(max(33%, 10rem), 1fr));}
+    gap: 10px;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));}
 
-.test{
-    display: inline-block;
-}

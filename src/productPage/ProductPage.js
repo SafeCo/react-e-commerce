@@ -1,8 +1,40 @@
 import {useEffect, useState} from 'react'
 import "./ProductPage.css"
 import Product from './components/Product'
+import {useOutletContext} from "react-router-dom";
+
 
 function ProductPage() {
+
+    const [cart, setCart] = useOutletContext()
+
+    const updateCart = (product)=>{
+
+        const productExists = cart.find(c => c.id === product.id);
+
+        if (productExists === undefined) {
+            const newObj = {...product}
+            newObj.quantity = 1
+            setCart([...cart, newObj])
+
+            } else {
+                const newObj = {...productExists}
+                const quantity =  parseFloat(newObj.quantity)
+                newObj.quantity = quantity + 1 ;
+
+                setCart(cart.map((item)=>{
+                    if(item.id === newObj.id){
+                        return newObj
+                    }else{
+                        return item
+                    }
+                }))
+            }
+    }
+    // useEffect(()=>{
+    //     console.log(cart)
+    // },[cart])
+
     const [productList, setProductList] = useState([])
     useEffect(()=>{
         fetch('https://fakestoreapi.com/products')
@@ -10,6 +42,7 @@ function ProductPage() {
             .then(json=>setProductList(json))
             .catch(error => console.log(error))
     },[])
+
 
     const sortBy = (sort)=>{
         switch(sort){
@@ -48,11 +81,6 @@ function ProductPage() {
 
     return (
         <>
-            <div className="test">
-            <div className="test">hello</div>
-            <div className="test">My</div><div className="test">name</div>
-
-            </div>
             <div className="productPage__container">
                 <div className="productPage__filterBar">
                     <label htmlFor="sort" >Sort by:</label>
@@ -68,7 +96,7 @@ function ProductPage() {
                     <div className="productPage__products">
                         {
                             productList.map((product) => {
-                                return (<Product key={product.id} product={product} />)
+                                return (<Product key={product.id} product={product} updateCart={updateCart} />)
                             })
                         }
                     </div>

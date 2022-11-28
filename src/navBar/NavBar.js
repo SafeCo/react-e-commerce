@@ -1,5 +1,5 @@
-import React from 'react'
-import { Outlet } from "react-router-dom";
+import {useState, useEffect} from 'react'
+import { Outlet, Link } from "react-router-dom";
 import logoBig from './logo-big.svg'
 import accountIcon from "./account-icon.svg"
 import searchIcon from "./search-icon.svg"
@@ -7,6 +7,14 @@ import cartIcon from "./shopping-cart-icon.svg"
 import "./NavBar.css";
 
 function NavBar() {
+
+    const [cart, setCart] = useState([])
+    const [cartCount, setCartCount] = useState("")
+
+    useEffect(()=>{
+        setCartCount(cart.length)
+    },[cart])
+
     return (
         <>
             <div className="nB__container">
@@ -56,13 +64,17 @@ function NavBar() {
                             <img src={accountIcon} className="nB__icon" alt="account Icon"/>
                         </div>
                         <div className="nB__icon-container">
-                            <p>Cart</p>
-                            <img src={cartIcon} className="nB__icon" alt="cart Icon"/>
+                            <Link to="/cart">
+                                <p>Cart</p>
+                                <img src={cartIcon} className="nB__icon" alt="cart Icon"/>
+                                <p>{cartCount}</p>
+                            </Link>
+                            
                         </div>
                     </div>
                 </div>
             </div> 
-            <Outlet/>
+            <Outlet context={[cart, setCart]}/>
         </>
     
     )
