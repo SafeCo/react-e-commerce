@@ -3,7 +3,7 @@ import "./CartItem.css"
 
 function CartItem({item}) {
     const [value, setValue] = useState(0)
-    console.log(item)
+
     useEffect(()=>{
         setValue(item.quantity)
     },[item.quantity])
@@ -30,7 +30,6 @@ function CartItem({item}) {
             }else{
                 setValue(0)
             }
-            
         } else {   
             setValue(action.target.value)
         }

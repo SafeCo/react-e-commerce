@@ -1,11 +1,11 @@
 .nB__container{
     position: relative;
-    outline: solid red 1px;
     width: 100%;
     font-family: var(--font-family-sans-serif);
     text-transform: uppercase;
     display: flex;
     justify-content: center;
+    background-color: white;
 }
 
 

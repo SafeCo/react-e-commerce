@@ -21,7 +21,8 @@ function NavBar() {
             <div className="nB__container">
                 <div className="nB__box">
                     <div className="nB__logo-container">
-                        <img src={logoBig}  className="nB__logo" alt="logo" />
+                    <h3>SIMPLE</h3>
+                        {/* <img src={logoBig}  className="nB__logo" alt="logo" /> */}
                     </div>
                     <ul className="nB__menu">
                         <li className="nB__menu-item">

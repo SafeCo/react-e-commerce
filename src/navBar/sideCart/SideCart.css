@@ -1,4 +1,5 @@
 .sideCart__container{
+    display: none;
     position: absolute;
     /* background-color: rgba(0, 0, 0, 0.5) ; */
     height: 100vh;
@@ -14,9 +15,52 @@
     height: 100%;
     width: fit-content;
 }
+
+                                                        /* HEADER */
 .sideCart__header{
     display: flex;
+    
 }
+
+.sideCart__header__icon-container{
+    flex: 1 1 auto;
+    display: flex;
+    align-items: center;
+}
+.sideCart__header__icon{
+    height: 30px;
+    width: 30px;
+}
+
+
+.sideCart__header__title-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1 1 auto;
+
+}
+
+.sideCart__header__exit-container{
+    flex: 1 1 auto;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+}
+
+.sideCart__header__exit{
+    height: 30px;
+    width: 30px;
+}
+
+
+
+
+
+
+
+
 
 .sideCart__items{
     display: flex;

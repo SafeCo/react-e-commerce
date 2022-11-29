@@ -1,0 +1,35 @@
+.hP__container{
+    border: solid green 2px;
+}
+.hP__heroImage-container{
+    position: relative;
+    height: calc(100vh - 104px);
+    overflow: hidden;
+}
+
+
+.hP__heroImage{
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+    aspect-ratio: 16/9;
+}
+
+.hP__heroImage__buttons-container{
+    display: flex;
+    position: absolute;
+    bottom: 10%;
+    left: 10%;
+}
+.hP__heroImage__button{
+    outline: none;
+    margin-right: 50px;
+    height: 50px;
+    width: 150px;
+    font-weight: 700;
+    font-size: 16px;
+    font-family: var(--font-family-sans-serif);
+}
+
+
+
