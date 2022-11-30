@@ -1,11 +1,14 @@
 .nB__container{
-    position: relative;
+    /* position: sticky;
+    top: 0;
+    z-index: 1; */
     width: 100%;
     font-family: var(--font-family-sans-serif);
     text-transform: uppercase;
     display: flex;
     justify-content: center;
     background-color: white;
+    border-bottom: solid lightgray 1px;
 }
 
 

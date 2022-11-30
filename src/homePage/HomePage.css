@@ -1,5 +1,4 @@
 .hP__container{
-    border: solid green 2px;
 }
 .hP__heroImage-container{
     position: relative;
@@ -15,12 +14,19 @@
     aspect-ratio: 16/9;
 }
 
-.hP__heroImage__buttons-container{
+.hP__heroImage__text-container{
     display: flex;
+    flex-direction: column;
     position: absolute;
     bottom: 10%;
     left: 10%;
 }
+
+.hP__heroImage__text{
+    font-size: 5rem;
+    color: white;
+}
+
 .hP__heroImage__button{
     outline: none;
     margin-right: 50px;
@@ -31,5 +37,17 @@
     font-family: var(--font-family-sans-serif);
 }
 
+.hP__main-container{
+    display: flex;
+    flex-direction: column;
+}
+.hP__main-title{
+    display: flex;
+    justify-content: center;
+    text-transform: capitalize;
+}
 
+.hP__main-cards-container{
+    display: flex;
 
+}

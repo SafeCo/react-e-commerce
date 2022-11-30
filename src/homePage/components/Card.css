@@ -1,0 +1,48 @@
+.card__container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1 1 auto;
+}
+
+.card__outline{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: solid lightgray 1px;
+    border-radius: 2px;
+    width: fit-content;
+    padding: 10px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+.card__image-container{
+    border: solid green 1px;
+    position: relative;
+    max-height: 300px;
+    max-width: 300px;
+    margin: 30px;
+    transition: all 0.5s ease;
+}
+.card__image-container:hover{
+    transform: scale(1.05);
+}
+
+.card__darkBg{
+    position: absolute;
+    border: solid red 1px;
+    background-color: rgba(0, 0,0, 0.7);
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    transition: all 0.5s ease;
+
+}
+.card__image{
+    height: 100%;
+    width: 100%;
+    aspect-ratio: 1/1;
+    object-fit: contain;
+}
