@@ -3,6 +3,7 @@
     justify-content: center;
     align-items: center;
     flex: 1 1 auto;
+    margin: 3px;
 }
 
 .card__outline{
@@ -18,31 +19,47 @@
 }
 
 .card__image-container{
-    border: solid green 1px;
     position: relative;
     max-height: 300px;
     max-width: 300px;
     margin: 30px;
-    transition: all 0.5s ease;
-}
-.card__image-container:hover{
-    transform: scale(1.05);
 }
 
 .card__darkBg{
     position: absolute;
-    border: solid red 1px;
     background-color: rgba(0, 0,0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
     top: 0;
     left: 0;
     height: 100%;
     width: 100%;
-    transition: all 0.5s ease;
+}
 
+.card__darkBg button{
+    cursor: pointer;
+    width: 100px;
+    height: 30px;
+    outline: none;
+    border: none;
 }
 .card__image{
     height: 100%;
     width: 100%;
     aspect-ratio: 1/1;
     object-fit: contain;
+}
+
+.card__title-line{
+    border-bottom: solid lightgray 1px;
+}
+
+.card__title-container{
+    padding: 15px;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

@@ -1,31 +1,106 @@
-import {useState} from 'react'
+import { useState, useRef, useEffect } from "react"
+import {motion, AnimatePresence} from "framer-motion"
 import "./Card.css"
 
 function Card() {
+    const [isHovering, setIsHovering] = useState(false)
 
-    const [isHovering, setIsHovering]= useState(false)
+    const containerVariant={
+        hidden:{
+            opacity: 0
+        },
+        visible: {
+            opacity: 1,
+            transition: {
+                when:"beforeChildren",
+                duration:1
+            }
+        }
+    }
 
-    const showButton = (cond)=>{
-        setIsHovering(!isHovering)
+    const buttonVariant= {
+        visible : {
+            scale: 1.1,
+            backgroundColor: "#000000",
+            color: "#FFFFFF",
+            transition: {
+                duration: 0.2, 
+            }
+        },
+    }
+
+    const widthVariant={
+        hidden:{
+            width: "0%"
+        },
+        visible: {
+            width: "90%",
+            transition:{
+                duration: 0.4
+            }
+        }
+    }
+
+    const appearVariant={
+        hidden: {
+            opacity: 0
+        },
+        visible:{
+            opacity: 1,
+            transition: {
+                duration: 0.5
+            }
+        }
     }
 
     return (
-        <div className="card__container">
+        <motion.div 
+        className="card__container"
+        variants={containerVariant}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{once: true}}
+        >
             <div className="card__outline">
-                <div  
-                onMouseEnter={()=>{showButton()}} 
-                onMouseLeave={()=>{showButton()}}
+                <motion.div  
+                whileHover={{scale: 1.05}}
                 className="card__image-container"
+                onMouseEnter={()=>{setIsHovering(!isHovering)}}
+                onMouseLeave={()=>{setIsHovering(!isHovering)}}
                 >
-                {
-                    isHovering && <div className="card__darkBg">Test</div>
+                <AnimatePresence>
+                    {
+                        isHovering && (
+                            <motion.div 
+                            className="card__darkBg"
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            exit={{ opacity: 0 }}
+                            >
+                            
+                                <motion.button
+                                variants={buttonVariant}
+                                whileHover="visible"
 
-                }
+                                >Shop now</motion.button>
+                            </motion.div>
+                            )
+                    }
+                </AnimatePresence>
                     <img className="card__image" src="https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg" />
-                </div>
-            <p>Hello</p>
+                </motion.div>
+                <motion.div
+                variants={widthVariant}
+                className="card__title-line"
+                >
+                </motion.div>
+                <motion.div 
+                variants={appearVariant}
+                className="card__title-container">
+                    <p>Here is a bag</p>
+                </motion.div>
             </div>
-        </div>
+        </motion.div>
     )
 }
 
