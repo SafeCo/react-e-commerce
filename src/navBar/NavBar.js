@@ -1,5 +1,6 @@
 import {useState, useEffect} from 'react'
 import { Outlet, Link } from "react-router-dom";
+import { motion } from 'framer-motion';
 import logoBig from './logo-big.svg'
 import accountIcon from "./account-icon.svg"
 import searchIcon from "./search-icon.svg"
@@ -11,6 +12,21 @@ function NavBar() {
 
     const [cart, setCart] = useState([])
     const [cartCount, setCartCount] = useState("")
+
+    const itemVariant= {
+        hidden: {
+            borderBottom: "solid #FFFFFF 2px",
+            
+        },
+
+        visible: {
+            borderBottom: "solid #000000 2px",
+            transition:{
+                duration: 0.2
+            }
+        }
+
+    }
 
     useEffect(()=>{
         setCartCount(cart.length)
@@ -25,36 +41,68 @@ function NavBar() {
                         {/* <img src={logoBig}  className="nB__logo" alt="logo" /> */}
                     </div>
                     <ul className="nB__menu">
-                        <li className="nB__menu-item">
+
+                        <motion.li 
+                        className="nB__menu-item"
+                        variants={itemVariant}
+                        initial="hidden"
+                        whileHover="visible"                        
+                        >
                             <button>
                                 Watches
                             </button>
-                        </li>
-                        <li className="nB__menu-item">
+                        </motion.li>
+
+                        <motion.li 
+                        className="nB__menu-item"
+                        variants={itemVariant}
+                        initial="hidden"
+                        whileHover="visible"
+                        >
                             <button>
                                 Eyewear
                             </button>
-                        </li>
-                        <li className="nB__menu-item">
+                        </motion.li>
+                        <motion.li 
+                        className="nB__menu-item"
+                        variants={itemVariant}
+                        initial="hidden"
+                        whileHover="visible"
+                        >
                             <button>
                                 Jewelry
                             </button>
-                        </li>
-                        <li className="nB__menu-item">
+                        </motion.li>
+                        <motion.li 
+                        className="nB__menu-item"
+                        variants={itemVariant}
+                        initial="hidden"
+                        whileHover="visible"
+                        >
                             <button>
                                 Essentials
                             </button>
-                        </li>
-                        <li className="nB__menu-item">
+                        </motion.li>
+                        <motion.li 
+                        className="nB__menu-item"
+                        variants={itemVariant}
+                        initial="hidden"
+                        whileHover="visible"
+                        >
                             <button>
                                 Gifting
                             </button>
-                        </li>
-                        <li className="nB__menu-item">
+                        </motion.li>
+                        <motion.li 
+                        className="nB__menu-item"
+                        variants={itemVariant}
+                        initial="hidden"
+                        whileHover="visible"
+                        >
                             <button>
                                 Sale
                             </button>
-                        </li>
+                        </motion.li>
                     </ul>
                     {/* When the icon is clicked the search bar expands from right to left and menu dissappears */}
                     <div className=" nB__icons-container">

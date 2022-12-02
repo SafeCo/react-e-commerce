@@ -9,13 +9,13 @@
     justify-content: center;
     background-color: white;
     border-bottom: solid lightgray 1px;
+    font-size: 1.5rem;
 }
 
 
 
 .nB__box{
     width: 100%;
-    padding: 20px 10px;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -36,19 +36,28 @@
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-around;
-    padding: 20px 10px;
+    height: 100%;
     list-style: none;
+}
+.nB__menu-item{
+    padding: 20px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
 }
 
 .nB__menu-item button{
     outline: none;
     border: none;
     background-color: transparent;
-    margin-left: 15px;
     text-transform: uppercase;
-    font-weight: var(--font-weight-m);    
+    font-weight: var(--font-weight-m);
+    font-size: 1.4rem;    
     cursor: pointer;
 }
+
 
                                                             /* NAV ICONS */
 .nB__icons-container{

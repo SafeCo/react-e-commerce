@@ -1,0 +1,10 @@
+.footer__container{
+    display: flex;
+    justify-content: space-around;
+    border: solid red 1px;
+}
+
+.temp{
+    border: solid orange 2px;
+    list-style: none;
+}

@@ -1,6 +1,7 @@
 import {motion, } from "framer-motion"
 
 import Card from './components/Card'
+import Footer from "./components/Footer"
 import "./HomePage.css"
 import reeds from "./images/reeds.jpg"
 
@@ -53,34 +54,7 @@ function HomePage() {
           </div>
 
         </main>
-
-        <footer className="hP__footer-container" >
-          <div className="hP__footer__firstCol">
-            <div>Logo</div>
-            <div>email</div>
-            <div>Socials</div>
-          </div>
-
-          <div className="hP__footer__secondCol">
-            <div>shop try list</div>
-            <div>Shop bags</div>
-            <div>Shop eyewear</div>
-            <div>Shop jewelery</div>
-            <div>Shop jewelery</div>
-          </div>
-
-          <div className="hP__footer__thirdCol">
-            <div>customer service</div>
-            <div>conat</div>
-            <div>Socials</div>
-          </div>
-
-
-
-
-
-
-        </footer>
+        <Footer/>
     </div>
   )
 }
