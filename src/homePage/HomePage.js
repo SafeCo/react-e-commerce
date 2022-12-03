@@ -1,7 +1,7 @@
 import {motion, } from "framer-motion"
 
 import Card from './components/Card'
-import Footer from "./components/Footer"
+import Footer from "../globalComponents/footer/Footer"
 import "./HomePage.css"
 import reeds from "./images/reeds.jpg"
 

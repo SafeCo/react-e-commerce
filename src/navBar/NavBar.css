@@ -4,7 +4,6 @@
     z-index: 1; */
     width: 100%;
     font-family: var(--font-family-sans-serif);
-    text-transform: uppercase;
     display: flex;
     justify-content: center;
     background-color: white;
@@ -12,6 +11,10 @@
     font-size: 1.5rem;
 }
 
+.nB__logo-container{
+    font-size: 4rem;
+    padding-left: 20px;
+}
 
 
 .nB__box{
@@ -63,17 +66,25 @@
 .nB__icons-container{
     display: flex;
     flex-direction: row;
-    justify-content: flex-end;
     flex: 1 1 0;
     justify-content: space-around;
 }
 
 .nB__icon-container{
     display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
     cursor: pointer;
+}
+
+.nB__icon__cart{
+    display: flex;
+    text-decoration: none;
 }
 
 .nB__icon{
     width: 15px;
+    margin-left: 3px;
     cursor: pointer;
 }
