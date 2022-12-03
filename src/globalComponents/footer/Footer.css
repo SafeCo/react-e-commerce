@@ -5,6 +5,7 @@
     background-color: #212A2F;
     color: #FFFFFF;
     align-items: center;
+    font-family: var(--font-family-sans-serif );
 }
 
 .footer__list-container{
@@ -45,19 +46,18 @@
 
 
 .colSpace{
-    border: solid orange 2px;
     list-style: none;
     
 }
-.colSpace:not(first-child){
-    font-size: 800;
+.footer__secondCol li{
+    margin-top: 2px;
 }
-
-
-
-
-
-
+.footer__thirdCol li{
+    margin-top: 2px;
+}
+.footer__fourthCol{
+    margin-top: 2px;
+}
 
 
 

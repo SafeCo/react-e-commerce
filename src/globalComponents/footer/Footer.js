@@ -32,7 +32,7 @@ function Footer() {
 
                 <ul className="footer__secondCol colSpace">
                     <li>
-                        <p>Shop Simple</p>
+                        <h4>Shop Simple</h4>
                     </li>
                     <li>
                         <p>Shop electronics</p>
@@ -50,7 +50,7 @@ function Footer() {
 
                 <ul className="footer__thirdCol colSpace">
                     <li>
-                        <p>Customer service</p>
+                        <h4>Customer service</h4>
                     </li>
                     <li>
                         <p>Accessibility Statement</p>
@@ -65,10 +65,10 @@ function Footer() {
                         <p>FAQ</p>
                     </li>
                     <li>
-                        <p>contact us</p>
+                        <p>Contact us</p>
                     </li>
                     <li>
-                        <p>socials</p>
+                        <p>Social media</p>
                     </li>
                     <li>
                         <p>Store locator</p>
@@ -77,7 +77,7 @@ function Footer() {
 
                 <ul className="footer__fourthCol colSpace">
                     <li>
-                        <p>Join Simple.</p>
+                        <h4>Join Simple.</h4>
                     </li>
                     <li>
                         <p>Our Story</p>
@@ -95,20 +95,23 @@ function Footer() {
 
                 <ul className="footer__fifthCol colSpace">
                     <li>
-                        <p>Sign up for newsletter</p>
+                        <p>Sign up to our newsletter</p>
                     </li>
                     <li>
-                        <p>enter your email/click to sign up</p>
-                    </li>
-                    <li>
-                        <p>flag UNITED KINGDOM dwn</p>
+                        <input 
+                        type="text" 
+                        placeholder="Enter your email address.." 
+                        />
+                        <button>
+                            <p>Sign Up</p>
+                        </button>
                     </li>
                 </ul>    
             </div>
             <div className="footer__tC">
                 <p>Terms & Conditions | </p>
                 <p>Privacy Policy |</p>
-                <p> C 2022 Simple.</p>
+                <p> © 2022 Simple.</p>
             </div>
         </footer>
     )

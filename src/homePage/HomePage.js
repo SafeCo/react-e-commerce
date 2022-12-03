@@ -4,6 +4,7 @@ import Card from './components/Card'
 import Footer from "../globalComponents/footer/Footer"
 import "./HomePage.css"
 import reeds from "./images/reeds.jpg"
+import CatergoryBanner from "./components/CatergoryBanner"
 
 function HomePage() {
   const buttonVariant= {
@@ -43,10 +44,11 @@ function HomePage() {
             
         </div>
         <main className="hP__main-container">
+          <CatergoryBanner/>
+          
           <div className="hP__main-title">
               <p>Our best sellers</p>
           </div>
-
           <div className="hP__main-cards-container">
             <Card/>
             <Card/>

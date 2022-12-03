@@ -4,6 +4,8 @@ import Product from './components/Product'
 import {useOutletContext} from "react-router-dom";
 
 
+import Footer from "../globalComponents/footer/Footer"
+
 function ProductPage() {
 
     const [cart, setCart] = useOutletContext()
@@ -102,7 +104,7 @@ function ProductPage() {
                     </div>
                 </div> 
             </div>
-            
+            <Footer/>
         </>
         
     )
