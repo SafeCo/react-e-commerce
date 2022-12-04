@@ -119,9 +119,10 @@ function NavBar() {
                         <div className="nB__icon-container">
                             <Link to="/cart">
                                 <div className="nB__icon__cart">
-                                    <p>Cart</p>
-                                    <img src={cartIcon} className="nB__icon" alt="cart Icon"/>
-                                    <p>{cartCount}</p>
+                                    <button>
+                                        <img src={cartIcon} className="nB__icon" alt="cart Icon"/>
+                                        <p>{cartCount}</p>
+                                    </button>
                                 </div>
                                 
                             </Link>
@@ -130,7 +131,7 @@ function NavBar() {
                     </div>
                 </div>
             </div> 
-            <SideCart cart={cart} setCart={setCart}/>
+            {/* <SideCart cart={cart} setCart={setCart}/> */}
             <Outlet context={[cart, setCart]}/>
         </>
     

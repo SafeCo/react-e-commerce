@@ -53,7 +53,7 @@ function SideCart({cart, setCart}) {
                     </button>
                 </div>
                 <div className="sideCart__message-container">
-                    <p>By clicking ‘CHECKOUT’, you will be redirected to the eShopWorld checkout page where payment will be taken and your order fulfilled</p>
+                    <p>By clicking ‘CHECKOUT’, you will be redirected to the eShopWorld checkout page where payment will be taken and your order fulfilled.</p>
                 </div>
             </div>
         </div>
