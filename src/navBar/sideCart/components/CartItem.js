@@ -47,12 +47,12 @@ function CartItem({item}) {
             </div>
 
             <div className="cartItem__price-container">
-                <p className="cartItem__price">{item.price}</p>
+                <p >{"£"+item.price}</p>
             </div>
 
             <div className="cartItem__button-container" >
                 <button className="cartItem__button">
-                    <p className="cartItem__button-text">remove</p>
+                    <p>remove</p>
                 </button>
             </div>
 
@@ -62,8 +62,8 @@ function CartItem({item}) {
                 <input type="number" className="cartItem__input"
                 onChange={(e)=>{updateValue(e)}} min="0" value={value}  />
                 <div className="cartItem__input-buttons">
-                    <button onClick={()=>updateValue("increase")} name="increase" className="cartItem__input-button" >+</button>
-                    <button onClick={()=>updateValue("decrease")} name="decrease" className="cartItem__input-button">-</button>
+                    <button onClick={()=>updateValue("increase")} name="increase" className="cartItem__input-button" >⮝</button>
+                    <button onClick={()=>updateValue("decrease")} name="decrease" className="cartItem__input-button">⮟</button>
                 </div>
             </div>
             

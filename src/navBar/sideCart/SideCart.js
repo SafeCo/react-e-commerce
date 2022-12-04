@@ -17,7 +17,7 @@ function SideCart({cart, setCart}) {
                     </div>
 
                     <div className="sideCart__header__title-container"> 
-                        <p className="sideCart__header__title">Review your cart</p>
+                        <p>Review your cart</p>
                     </div>
 
                     <div className="sideCart__header__exit-container">
@@ -39,6 +39,10 @@ function SideCart({cart, setCart}) {
                 </main>
                 <div className="sideCart__promo-container">
                     <p>enter promo code</p>
+                    <button>
+                        <p>+</p>
+                    </button>
+
                 </div>
                 <div className="sideCart__subTotal-container">
                     <p>subtotal: </p>

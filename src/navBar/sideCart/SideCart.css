@@ -1,25 +1,27 @@
 .sideCart__container{
-    display: none;
     position: absolute;
+    font-size: 1.6rem;
     /* background-color: rgba(0, 0, 0, 0.5) ; */
     height: 100vh;
-    width: 50%;
+    
     /* width: 100%; */
     top: 0;
     /* display: flex;
     justify-content: flex-end; */
+    font-family: var(--font-family-sans-serif);
+    border: solid green 2px;
 }
 .sideCart__box{
     background-color: white;
     border: solid red 2px;
     height: 100%;
-    width: fit-content;
 }
 
                                                         /* HEADER */
 .sideCart__header{
     display: flex;
-    
+    border: solid lightgray 1px;
+
 }
 
 .sideCart__header__icon-container{
@@ -28,8 +30,8 @@
     align-items: center;
 }
 .sideCart__header__icon{
-    height: 30px;
-    width: 30px;
+    height: 25px;
+    width: 25px;
 }
 
 
@@ -38,7 +40,8 @@
     justify-content: center;
     align-items: center;
     flex: 1 1 auto;
-
+    text-transform: uppercase;
+    font-weight: 600;
 }
 
 .sideCart__header__exit-container{
@@ -52,17 +55,72 @@
 .sideCart__header__exit{
     height: 30px;
     width: 30px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    background-color: transparent;
 }
-
-
-
-
-
-
-
-
 
 .sideCart__items{
     display: flex;
     flex-direction: column;
 }
+
+                                                        /* PROMO */
+
+.sideCart__promo-container{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 1.4rem;
+}
+
+.sideCart__promo-container button{
+    cursor: pointer;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    font-weight: 700;
+    font-size: 2rem;
+}
+
+
+                                                        /* SUB TOTAL */
+
+.sideCart__subTotal-container{
+    padding: 10px;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 1.2rem;
+}
+
+                                                        /* checkout button */
+.sideCart__checkOut__button-container{
+    display: flex;
+    justify-content: center;
+}
+.sideCart__checkOut__button{
+    height: 40px;
+    width: 200px;
+    border-radius: 2px;
+    background-color: #53c563;
+    border: solid #53c563 1px;
+    outline: none;
+    color: white;
+}
+
+
+
+                                                        /* MESSAGE */
+
+
+.sideCart__message-container{
+ border: solid red 1px;
+ width: 100%;
+}
+.sideCart__message-container p{
+    border: solid green 2px;
+  
+   }

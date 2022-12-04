@@ -5,19 +5,20 @@
 .cB__title-container{
     display: flex;
     justify-content: center;
-    font-size: 2rem;
+    font-size: 2.2rem;
     font-weight: 700;
     margin: 10px 0 10px 0;
 }
 
 .cB__cards__container{
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
 }
 
 .cB__image-container{
     display: inline-block;
     max-width: 400px;
+    padding: 20px;
     cursor: pointer;
 }
 

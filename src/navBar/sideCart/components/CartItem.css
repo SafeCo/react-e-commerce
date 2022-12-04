@@ -1,12 +1,11 @@
 .cartItem__container{
     display: flex;
-    border: solid green 2px;
+    border-bottom: solid lightgray 1px;
 }
 
                                                                 /* IMAGE */
 .cartItem__image-container{
     padding: 10px;
-    height: 100px;
     width: 100px;
 }
 
@@ -14,23 +13,40 @@
     aspect-ratio: 1/1;
     height: 100%;
     width: 100%;
+    object-fit: contain;
 }
 
                                                                     /* INFO */
 
 .cartItem__info{
-    border: solid red 1px;
+    font-family: var(--font-family-sans-serif);
+    font-size: 1.6rem;
     display: flex;
     flex-direction: column;
-    width: 250px;
+    max-width: 250px;
+    width: 100%;
+}
+
+.cartItem__price-container{
+    font-size: 1.3rem;
 }
 
 .cartItem__title{
+    font-weight: 600;
     width: 100%;
     text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;
-    border: solid orange 1px;
+}
+
+.cartItem__button{
+    outline: none;
+    border: none;
+    background-color: transparent;
+    color: #d9021b;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    cursor: pointer;
 }
 
 
@@ -39,10 +55,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    border: solid red 1px;
 }
 .cartItem__input-box{
-    border: solid lightgray 2px;
+    border: solid lightgray 1px;
     padding: 5px 10px;
     display: flex;
 }
@@ -50,6 +65,8 @@
 .cartItem__input{
     height: 30px;
     width: 30px;
+    border: none;
+    outline: none;
 }
 
 /* Chrome, Safari, Edge, Opera */
@@ -57,11 +74,15 @@ input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
     -webkit-appearance: none;
     margin: 0;
+    border: none;
+    outline: none;
 }
 
 /* Firefox */
 input[type=number] {
     -moz-appearance: textfield;
+    border: none;
+    outline: none;
 }
 
 .cartItem__input-buttons{
@@ -70,6 +91,11 @@ input[type=number] {
 }
 
 .cartItem__input-button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
     height: 15px;
-    text-align: center;
+    width: 15px;
+    border: none;
 }
