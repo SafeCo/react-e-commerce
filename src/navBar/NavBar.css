@@ -80,7 +80,9 @@
 
 .nB__icon__cart{
     display: flex;
-    text-decoration: none;
+    border: none;
+    outline: none;
+    background-color: transparent;
 }
 
 .nB__icon{

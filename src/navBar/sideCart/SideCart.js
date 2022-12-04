@@ -3,7 +3,7 @@ import "./SideCart.css"
 import cartIcon from "../shopping-cart-icon.svg"
 import CartItem from './components/CartItem'
 
-function SideCart({cart, setCart}) {
+function SideCart({cart, setCart, openCart, setOpenCart}) {
     return (
         <div className="sideCart__container">
             <div className="sideCart__box">
@@ -21,7 +21,10 @@ function SideCart({cart, setCart}) {
                     </div>
 
                     <div className="sideCart__header__exit-container">
-                        <button className="sideCart__header__exit">
+                        <button 
+                        className="sideCart__header__exit"
+                        onClick={()=>{setOpenCart(!openCart)}}
+                        >
                             <p>X</p>
                         </button>
                     </div>
