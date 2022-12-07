@@ -79,6 +79,7 @@
 }
 
 .nB__icon__cart{
+    cursor: pointer;
     display: flex;
     border: none;
     outline: none;
@@ -88,5 +89,4 @@
 .nB__icon{
     width: 15px;
     margin-left: 3px;
-    cursor: pointer;
 }

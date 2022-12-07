@@ -23,7 +23,6 @@ function NavBar() {
 
 
 
-    // const [cart, setCart] = useState([])
     const [openCart, setOpenCart] = useState(false)
     const [cartCount, setCartCount] = useState("")
 
@@ -131,23 +130,19 @@ function NavBar() {
                         </div>
 
                         <div className="nB__icon-container">
-                            {/* <Link to="/cart" style={{ textDecoration: 'none' }}> */}
                                     <button 
                                     className="nB__icon__cart"
                                     onClick={()=>{setOpenCart(!openCart)}}
                                     >
                                         <img src={cartIcon} className="nB__icon" alt="cart Icon"/>
                                         <p>{cartCount}</p>
-                                    </button>
-                                
-                            {/* </Link> */}
-                            
+                                    </button>                            
                         </div>
                     </div>
                 </div>
             </div> 
             {
-                openCart && <SideCart cart={cart} setCart={setCart} setOpenCart={setOpenCart} openCart={openCart}/>
+                openCart && <SideCart setOpenCart={setOpenCart} openCart={openCart}/>
 
             }
             <Outlet/>

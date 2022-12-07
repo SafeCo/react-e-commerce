@@ -1,4 +1,4 @@
-import {useContext , useState} from 'react'
+import {useContext , useEffect, useState} from 'react'
 import { CartContext } from '../../context/CartContext';
 
 import "./SideCart.css"
@@ -12,13 +12,23 @@ import cartIcon from "../shopping-cart-icon.svg"
 function SideCart({ openCart, setOpenCart}) {
 
     const {cart, setCart} = useContext(CartContext)
-    console.log(cart.length !== 0)
+
     const removeItem = (id)=>{
         console.log(id)
-        setCart(cart.map((item)=>{
+        setCart(cart.filter((item)=>{
             return item.id !== id
         }))
     }
+
+    // function mapCart (){
+    //     return cart.map((item)=>{
+    //         return <CartItem removeItem={removeItem} key={item.id} item={item}/>
+    //     })
+    // }
+
+    useEffect(()=>{
+        console.log(cart)
+    },[cart])
 
     const closeModal = (e)=>{
         if(e.currentTarget === e.target){
@@ -70,12 +80,10 @@ function SideCart({ openCart, setOpenCart}) {
                 { cart.length !== 0 ? (
                     <>
                         <main className="sideCart__items">
-                            { cart ?
+                            { 
                                 cart.map((item)=>{
                                     return <CartItem removeItem={removeItem} key={item.id} item={item}/>
                                 })
-                                :
-                                null
                             }
                         </main>
                         <div className="sideCart__promo-container">
