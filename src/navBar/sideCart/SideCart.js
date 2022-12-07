@@ -28,6 +28,14 @@ function SideCart({cart, setCart, openCart, setOpenCart}) {
         }
     }
 
+    const totals = cart.map((item)=>{
+        return item.price * item.quantity
+    })
+    const sum = totals.reduce((total, num)=>{
+        return total + num
+    })
+
+
     return (
         <div 
         className="sideCart__container"
@@ -77,6 +85,7 @@ function SideCart({cart, setCart, openCart, setOpenCart}) {
                         </div>
                         <div className="sideCart__subTotal-container">
                             <p>subtotal: </p>
+                            <p>{"£"+ sum} </p>
                         </div>
                         <div className="sideCart__checkOut__button-container">
                             <button className="sideCart__checkOut__button ">

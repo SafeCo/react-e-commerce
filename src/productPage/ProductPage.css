@@ -1,7 +1,8 @@
 .productPage__container{
     display: flex;
     flex-direction: column;
-    
+    font-size: 1.6rem;
+    font-family: var(--font-family-sans-serif);
 }
 
 .productPage__products-container{
