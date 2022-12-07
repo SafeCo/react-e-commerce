@@ -1,14 +1,17 @@
-import {useEffect, useState} from 'react'
+import {useEffect, useState, useContext} from 'react'
+
+import { CartContext } from '../context/CartContext';
+
 import "./ProductPage.css"
+
 import Product from './components/Product'
-import {useOutletContext} from "react-router-dom";
-
-
 import Footer from "../globalComponents/footer/Footer"
 
 function ProductPage() {
 
-    const [cart, setCart] = useOutletContext()
+    const {cart, setCart} = useContext(CartContext)
+
+    // const [cart, setCart] = useOutletContext()
 
     const updateCart = (product)=>{
 

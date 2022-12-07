@@ -1,4 +1,3 @@
-import { useContext } from "react";
 import { Route, Routes } from "react-router-dom";
 import "./App.css"
 
@@ -19,7 +18,7 @@ function App() {
           <Route path="/products" element={ <ProductPage/> }  />
           <Route path="/cart" element={ <CartPage/> }  />
         </Route>
-    </Routes>
+      </Routes>
     </CartContextProvider>
     
   );

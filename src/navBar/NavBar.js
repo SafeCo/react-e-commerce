@@ -1,5 +1,8 @@
-import {useState, useEffect} from 'react'
-import { Outlet, Link } from "react-router-dom";
+import {useState, useEffect, useContext} from 'react'
+
+import { CartContext } from '../context/CartContext';
+
+import { Outlet } from "react-router-dom";
 import { motion } from 'framer-motion';
 import logoBig from './logo-big.svg'
 import accountIcon from "./account-icon.svg"
@@ -10,7 +13,8 @@ import SideCart from './sideCart/SideCart';
 
 function NavBar() {
 
-    const [cart, setCart] = useState([])
+    const {cart, setCart} = useContext(CartContext)
+    // const [cart, setCart] = useState([])
     const [openCart, setOpenCart] = useState(false)
     const [cartCount, setCartCount] = useState("")
 
@@ -137,7 +141,7 @@ function NavBar() {
                 openCart && <SideCart cart={cart} setCart={setCart} setOpenCart={setOpenCart} openCart={openCart}/>
 
             }
-            <Outlet context={[cart, setCart]}/>
+            <Outlet/>
         </>
     
     )
