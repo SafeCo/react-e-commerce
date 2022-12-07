@@ -33,9 +33,8 @@ function ProductPage() {
                 }))
             }
     }
-    // useEffect(()=>{
-    //     console.log(cart)
-    // },[cart])
+
+    
 
     const [productList, setProductList] = useState([])
     useEffect(()=>{
