@@ -13,7 +13,16 @@ import SideCart from './sideCart/SideCart';
 
 function NavBar() {
 
+
+    
+
     const {cart, setCart} = useContext(CartContext)
+    useEffect(() => {
+        localStorage.setItem('cartData', JSON.stringify(cart));
+      }, [cart]);
+
+
+
     // const [cart, setCart] = useState([])
     const [openCart, setOpenCart] = useState(false)
     const [cartCount, setCartCount] = useState("")

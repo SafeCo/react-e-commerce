@@ -39,7 +39,7 @@
     overflow: hidden;
 }
 
-.cartItem__button{
+.cartItem__removeButton{
     outline: none;
     border: none;
     background-color: transparent;

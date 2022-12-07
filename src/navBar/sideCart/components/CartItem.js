@@ -1,7 +1,7 @@
 import {useEffect, useState} from 'react'
 import "./CartItem.css"
 
-function CartItem({item}) {
+function CartItem({item, removeItem}) {
     const [value, setValue] = useState(0)
 
     useEffect(()=>{
@@ -50,8 +50,8 @@ function CartItem({item}) {
                 <p >{"£"+item.price}</p>
             </div>
 
-            <div className="cartItem__button-container" >
-                <button className="cartItem__button">
+            <div className="cartItem__removeButton-container" >
+                <button onClick={()=>{console.log("working");removeItem(item.id)}} className="cartItem__removeButton">
                     <p>remove</p>
                 </button>
             </div>

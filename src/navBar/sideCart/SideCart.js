@@ -1,24 +1,24 @@
-import React from 'react'
+import {useContext , useState} from 'react'
+import { CartContext } from '../../context/CartContext';
+
 import "./SideCart.css"
-import { motion } from 'framer-motion'
 
 import CartItem from './components/CartItem'
+import EmptyCart from './components/EmptyCart';
 
 import cartIcon from "../shopping-cart-icon.svg"
-import stockImage from "../parachute.jpg"
 
-function SideCart({cart, setCart, openCart, setOpenCart}) {
-    
-    const buttonVariant= {
-        visible : {
-            scale: 1.1,
-            backgroundColor: "#000000",
-            color: "#FFFFFF",
-            transition: {
-                duration: 0.2, 
-            }
-        },
-      }
+
+function SideCart({ openCart, setOpenCart}) {
+
+    const {cart, setCart} = useContext(CartContext)
+    console.log(cart.length !== 0)
+    const removeItem = (id)=>{
+        console.log(id)
+        setCart(cart.map((item)=>{
+            return item.id !== id
+        }))
+    }
 
     const closeModal = (e)=>{
         if(e.currentTarget === e.target){
@@ -28,13 +28,16 @@ function SideCart({cart, setCart, openCart, setOpenCart}) {
         }
     }
 
-    const totals = cart.map((item)=>{
-        return item.price * item.quantity
-    })
-    const sum = totals.reduce((total, num)=>{
-        return total + num
-    })
-
+    function getSum (){
+        const totals = cart.map((item)=>{
+            return item.price * item.quantity
+        })
+        const sum = totals.reduce((total, num)=>{
+            return total + num
+        }) 
+        return sum
+    }
+    
 
     return (
         <div 
@@ -64,13 +67,12 @@ function SideCart({cart, setCart, openCart, setOpenCart}) {
                         </button>
                     </div>
                 </header>
-
-                { cart.length > 0 ? (
+                { cart.length !== 0 ? (
                     <>
                         <main className="sideCart__items">
                             { cart ?
                                 cart.map((item)=>{
-                                    return <CartItem key={item.id} item={item}/>
+                                    return <CartItem removeItem={removeItem} key={item.id} item={item}/>
                                 })
                                 :
                                 null
@@ -85,7 +87,7 @@ function SideCart({cart, setCart, openCart, setOpenCart}) {
                         </div>
                         <div className="sideCart__subTotal-container">
                             <p>subtotal: </p>
-                            <p>{"£"+ sum} </p>
+                            <p>{"£" + getSum() } </p>
                         </div>
                         <div className="sideCart__checkOut__button-container">
                             <button className="sideCart__checkOut__button ">
@@ -96,30 +98,7 @@ function SideCart({cart, setCart, openCart, setOpenCart}) {
                             <p>By clicking ‘CHECKOUT’, you will be redirected to the eShopWorld checkout page where payment will be taken and your order fulfilled.</p>
                         </div>
                     </>):(
-                        <div className="sideCart__empty-container">
-                            <div className="sideCart__empty__image-container">
-                                <img className="sideCart__empty__image" src={stockImage} />
-                            </div>
-                                <p className="sideCart__empty__message" >Your cart is empty...</p>
-                            <div className="sideCart__empty__button-container">
-                                <motion.button
-                                className="sideCart__empty__button"
-                                variants={buttonVariant}
-                                whileHover="visible"
-                                >
-                                    <p>Shop Mens</p>
-                                </motion.button>
-
-                                <motion.button
-                                className="sideCart__empty__button"
-                                variants={buttonVariant}
-                                whileHover="visible"
-                                >
-                                    <p>Shop Womens</p>
-                                </motion.button>
-                            </div>
-                            
-                        </div>
+                        <EmptyCart/>
                     )
                 }
             </div>
