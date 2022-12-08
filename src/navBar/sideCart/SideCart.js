@@ -1,4 +1,5 @@
 import {useContext , useEffect, useState} from 'react'
+import { Link } from 'react-router-dom';
 import { CartContext } from '../../context/CartContext';
 
 import "./SideCart.css"
@@ -19,12 +20,6 @@ function SideCart({ openCart, setOpenCart}) {
             return item.id !== id
         }))
     }
-
-    // function mapCart (){
-    //     return cart.map((item)=>{
-    //         return <CartItem removeItem={removeItem} key={item.id} item={item}/>
-    //     })
-    // }
 
     useEffect(()=>{
         console.log(cart)
@@ -58,10 +53,13 @@ function SideCart({ openCart, setOpenCart}) {
                 <header className="sideCart__header">
                 
                     <div className="sideCart__header__icon-container" >
+                    <Link to={"/"}>
                         <img src={cartIcon} 
                         className="sideCart__header__icon"
                         alt="shopping cart icon"  
                         /> 
+                    </Link>
+                        
                     </div>
 
                     <div className="sideCart__header__title-container"> 

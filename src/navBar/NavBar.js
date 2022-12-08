@@ -2,7 +2,7 @@ import {useState, useEffect, useContext} from 'react'
 
 import { CartContext } from '../context/CartContext';
 
-import { Outlet } from "react-router-dom";
+import { Outlet, Link } from "react-router-dom";
 import { motion } from 'framer-motion';
 import logoBig from './logo-big.svg'
 import accountIcon from "./account-icon.svg"
@@ -50,8 +50,9 @@ function NavBar() {
             <div className="nB__container">
                 <div className="nB__box">
                     <div className="nB__logo-container">
-                    <h3>Simple.</h3>
-                        {/* <img src={logoBig}  className="nB__logo" alt="logo" /> */}
+                        <Link to={"/"} style={{textDecoration: "none", color: "none"}}>
+                            <h3>Simple.</h3>
+                        </Link>
                     </div>
                     <ul className="nB__menu">
 
