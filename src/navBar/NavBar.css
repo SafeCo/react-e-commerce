@@ -11,11 +11,6 @@
     font-size: 1.5rem;
 }
 
-.nB__logo-container{
-    font-size: 4rem;
-    padding-left: 20px;
-}
-
 
 .nB__box{
     width: 100%;
@@ -25,12 +20,15 @@
 }
 
                                                             /* LOGO CONTAINER */
-.nB__logo-container{
+.nB__logo__container{
     flex: 1 1 0;
+    font-size: 4rem;
+    padding-left: 20px;
 }
-.nB__logo{
-    width: 100%;
+.nB__logo-container{
+    width: fit-content;
 }
+
 
                                                             /* NAV MENU */
 .nB__menu{

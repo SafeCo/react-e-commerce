@@ -49,10 +49,13 @@ function NavBar() {
         <>
             <div className="nB__container">
                 <div className="nB__box">
-                    <div className="nB__logo-container">
-                        <Link to={"/"} style={{textDecoration: "none", color: "none"}}>
-                            <h3>Simple.</h3>
-                        </Link>
+                    <div className="nB__logo__container">
+                        <div className="nB__logo-container">
+                            <Link to={"/"} style={{textDecoration: "none", color: "none"}}>
+                                <h3>Simple.</h3>
+                            </Link>
+                        </div>
+                        
                     </div>
                     <ul className="nB__menu">
 
