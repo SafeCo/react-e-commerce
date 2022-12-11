@@ -5,9 +5,9 @@ import { CartContext } from '../context/CartContext';
 import { Outlet, Link } from "react-router-dom";
 import { motion } from 'framer-motion';
 import logoBig from './logo-big.svg'
-import accountIcon from "./account-icon.svg"
-import searchIcon from "./search-icon.svg"
-import cartIcon from "./shopping-cart-icon.svg"
+import accountIcon from "./images/account-icon.svg"
+import searchIcon from "./images/search-icon.svg"
+import cartIcon from "./images/shopping-cart-icon.svg"
 import "./NavBar.css";
 import SideCart from './sideCart/SideCart';
 

@@ -1,7 +1,7 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import "./EmptyCart.css"
-import stockImage from "../../parachute.jpg"
+import stockImage from "../../images/parachute.jpg"
 
 
 
