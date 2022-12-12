@@ -1,38 +1,36 @@
-import {useEffect, useState} from 'react'
+import {useEffect, useState, useContext} from 'react'
+import { CartContext } from '../../../context/CartContext';
+
 import "./CartItem.css"
 
 function CartItem({item, removeItem}) {
-    const [value, setValue] = useState(0)
-
-    useEffect(()=>{
-        setValue(item.quantity)
-    },[item.quantity])
-    // const item  = {
-    //         "id": 1,
-    //         "title": "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
-    //         "price": 109.95,
-    //         "description": "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
-    //         "category": "men's clothing",
-    //         "image": "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg",
-    //         "rating": {
-    //             "rate": 3.9,
-    //             "count": 120
-    //         }
-    //     }
+    const {cart, setCart} = useContext(CartContext)
     
     const updateValue= (action)=>{
         if(action === "increase"){
-            setValue(parseInt(value) + 1)
+            const num = parseInt(item.quantity) + 1;
+            updateItemQuantity(num)
 
         } else if( action === "decrease"){
-            if(value !== 0){
-                setValue(parseInt(value) -1 )
+            if(item.quantity !== 1){
+                const num = parseInt(item.quantity) - 1;
+                updateItemQuantity(num)
             }else{
-                setValue(0)
+                const num = 1;
+                updateItemQuantity(num)
             }
-        } else {   
-            setValue(action.target.value)
-        }
+        } 
+    }
+
+    const updateItemQuantity = (num)=>{
+        setCart(cart.map((items)=>{
+            if(items.id === item.id){
+                item.quantity = num
+                return item
+            }else{
+                return items
+            }
+        }))
     }
 
   return (
@@ -60,7 +58,7 @@ function CartItem({item, removeItem}) {
         <div className="cartItem__input-container">
             <div className="cartItem__input-box">
                 <input type="number" className="cartItem__input"
-                onChange={(e)=>{updateValue(e)}} min="0" value={value}  />
+                onChange={(e)=>{updateValue(e)}} min="0" value={item.quantity}  />
                 <div className="cartItem__input-buttons">
                     <button onClick={()=>updateValue("increase")} name="increase" className="cartItem__input-button" >⮝</button>
                     <button onClick={()=>updateValue("decrease")} name="decrease" className="cartItem__input-button">⮟</button>
