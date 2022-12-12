@@ -13,18 +13,8 @@ import SideCart from './sideCart/SideCart';
 
 function NavBar() {
 
-
-    
-
-    const {cart, setCart} = useContext(CartContext)
-    // useEffect(() => {
-    //     localStorage.setItem('cartData', JSON.stringify(cart));
-    //   }, [cart]);
-
-
-
+    const {cartCount, setCartCount} = useContext(CartContext)
     const [openCart, setOpenCart] = useState(false)
-    const [cartCount, setCartCount] = useState("")
 
     const itemVariant= {
         hidden: {
@@ -38,12 +28,7 @@ function NavBar() {
                 duration: 0.2
             }
         }
-
     }
-
-    useEffect(()=>{
-        setCartCount(cart.length)
-    },[cart])
 
     return (
         <>

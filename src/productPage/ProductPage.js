@@ -36,8 +36,6 @@ function ProductPage() {
         }
     }
 
-    
-
     const [productList, setProductList] = useState([])
     useEffect(()=>{
         fetch('https://fakestoreapi.com/products')
