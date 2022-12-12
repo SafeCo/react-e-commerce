@@ -5,9 +5,10 @@ import { CartContext } from '../context/CartContext';
 import { Outlet, Link } from "react-router-dom";
 import { motion } from 'framer-motion';
 import logoBig from './logo-big.svg'
-import accountIcon from "./images/account-icon.svg"
-import searchIcon from "./images/search-icon.svg"
-import cartIcon from "./images/shopping-cart-icon.svg"
+import accountIcon from "./icons/account-icon.svg"
+import hamburgerIcon from "./icons/hamburger-icon.svg"
+import searchIcon from "./icons/search-icon.svg"
+import cartIcon from "./icons/shopping-cart-icon.svg"
 import "./NavBar.css";
 import SideCart from './sideCart/SideCart';
 import NavList from './navList/NavList';
@@ -49,7 +50,15 @@ function NavBar() {
         <>
             <div className="nB__container">
                 <div className="nB__box">
-                    <div className="nB__logo__container">
+                    { !matches ?
+                        <div className="nB__hB-container temp">
+                            <div className="nB__icon-container">
+                                <img src={hamburgerIcon} className="nB__icon" alt="Hamburger Icon"/>
+                            </div>
+                        </div> :
+                        null
+                    }
+                    <div className="nB__logo__container temp">
                         <div className="nB__logo-container">
                             <Link to={"/"} style={{textDecoration: "none", color: "none"}}>
                                 <h3>Simple.</h3>
@@ -64,7 +73,7 @@ function NavBar() {
                     }
 
                     {/* When the icon is clicked the search bar expands from right to left and menu dissappears */}
-                    <div className=" nB__icons-container">
+                    <div className=" nB__icons-container temp">
 
                         <div className="nB__icon-container">
                             <img src={searchIcon} className="nB__icon" alt="search Icon"/>

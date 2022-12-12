@@ -6,7 +6,7 @@ import "./SideCart.css"
 import CartItem from './components/CartItem'
 import EmptyCart from './components/EmptyCart';
 
-import cartIcon from "../images/shopping-cart-icon.svg"
+import cartIcon from "../icons/shopping-cart-icon.svg"
 
 
 function SideCart({ openCart, setOpenCart}) {

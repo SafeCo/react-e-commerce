@@ -19,11 +19,23 @@
     align-items: center;
 }
 
+.temp{
+    border: solid red 1px;
+}
+                                                            /* HAMBURGER CONTAINER */
+.nB__hB-container{
+    display: flex;
+    flex: 1 1 0;
+    padding-left: 30px;
+}
+
                                                             /* LOGO CONTAINER */
 .nB__logo__container{
     flex: 1 1 0;
     font-size: 4rem;
-    padding-left: 20px;
+    display: flex;
+    justify-content: center;
+    /* padding-left: 20px; */
 }
 .nB__logo-container{
     width: fit-content;
