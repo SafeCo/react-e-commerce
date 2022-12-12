@@ -14,15 +14,11 @@ function SideCart({ openCart, setOpenCart}) {
     const {cart, setCart} = useContext(CartContext)
 
     const removeItem = (id)=>{
-        console.log(id)
         setCart(cart.filter((item)=>{
             return item.id !== id
         }))
+        
     }
-
-    useEffect(()=>{
-        console.log(cart)
-    },[cart])
 
     const closeModal = (e)=>{
         if(e.currentTarget === e.target){
@@ -71,7 +67,7 @@ function SideCart({ openCart, setOpenCart}) {
                         </button>
                     </div>
                 </header>
-                { cart.length !== 0 ? (
+                { cart.length != 0 ? (
                     <>
                         <main className="sideCart__items">
                             { 
