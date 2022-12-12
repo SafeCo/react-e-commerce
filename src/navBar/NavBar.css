@@ -29,37 +29,6 @@
     width: fit-content;
 }
 
-
-                                                            /* NAV MENU */
-.nB__menu{
-    display: flex;
-    flex: 2 1 0;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    height: 100%;
-    list-style: none;
-}
-.nB__menu-item{
-    padding: 20px 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-}
-
-.nB__menu-item button{
-    outline: none;
-    border: none;
-    background-color: transparent;
-    text-transform: uppercase;
-    font-weight: var(--font-weight-m);
-    font-size: 1.4rem;    
-    cursor: pointer;
-}
-
-
                                                             /* NAV ICONS */
 .nB__icons-container{
     display: flex;

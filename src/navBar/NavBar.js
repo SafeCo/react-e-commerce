@@ -10,11 +10,26 @@ import searchIcon from "./images/search-icon.svg"
 import cartIcon from "./images/shopping-cart-icon.svg"
 import "./NavBar.css";
 import SideCart from './sideCart/SideCart';
+import NavList from './navList/NavList';
 
 function NavBar() {
 
     const {cartCount, setCartCount} = useContext(CartContext)
     const [openCart, setOpenCart] = useState(false)
+
+    const [matches, setMatches] = useState(
+        window.matchMedia("(min-width: 1000px)").matches
+    )
+    useEffect(() => {
+        window
+        .matchMedia("(min-width: 1000px)")
+        .addEventListener('change', e => setMatches( e.matches ));
+        return ()=>{
+            window
+            .matchMedia("(min-width: 1000px)")
+            .removeEventListener('change', e => setMatches( e.matches ));
+        }
+    }, []);
 
     const itemVariant= {
         hidden: {
@@ -42,70 +57,12 @@ function NavBar() {
                         </div>
                         
                     </div>
-                    <ul className="nB__menu">
 
-                        <motion.li 
-                        className="nB__menu-item"
-                        variants={itemVariant}
-                        initial="hidden"
-                        whileHover="visible"                        
-                        >
-                            <button>
-                                Watches
-                            </button>
-                        </motion.li>
+                    {matches? 
+                        <NavList/> : 
+                        null
+                    }
 
-                        <motion.li 
-                        className="nB__menu-item"
-                        variants={itemVariant}
-                        initial="hidden"
-                        whileHover="visible"
-                        >
-                            <button>
-                                Eyewear
-                            </button>
-                        </motion.li>
-                        <motion.li 
-                        className="nB__menu-item"
-                        variants={itemVariant}
-                        initial="hidden"
-                        whileHover="visible"
-                        >
-                            <button>
-                                Jewelry
-                            </button>
-                        </motion.li>
-                        <motion.li 
-                        className="nB__menu-item"
-                        variants={itemVariant}
-                        initial="hidden"
-                        whileHover="visible"
-                        >
-                            <button>
-                                Essentials
-                            </button>
-                        </motion.li>
-                        <motion.li 
-                        className="nB__menu-item"
-                        variants={itemVariant}
-                        initial="hidden"
-                        whileHover="visible"
-                        >
-                            <button>
-                                Gifting
-                            </button>
-                        </motion.li>
-                        <motion.li 
-                        className="nB__menu-item"
-                        variants={itemVariant}
-                        initial="hidden"
-                        whileHover="visible"
-                        >
-                            <button>
-                                Sale
-                            </button>
-                        </motion.li>
-                    </ul>
                     {/* When the icon is clicked the search bar expands from right to left and menu dissappears */}
                     <div className=" nB__icons-container">
 
