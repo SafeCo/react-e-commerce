@@ -17,9 +17,9 @@ function NavBar() {
     
 
     const {cart, setCart} = useContext(CartContext)
-    useEffect(() => {
-        localStorage.setItem('cartData', JSON.stringify(cart));
-      }, [cart]);
+    // useEffect(() => {
+    //     localStorage.setItem('cartData', JSON.stringify(cart));
+    //   }, [cart]);
 
 
 

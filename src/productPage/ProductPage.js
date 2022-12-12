@@ -15,6 +15,51 @@ function ProductPage() {
 
     const updateCart = (product)=>{
 
+        const items = JSON.parse(localStorage.getItem("cartData"));
+        const storageExists = items?.find(c => c.id === product.id);
+
+    
+
+ //*********************************************************
+            //LOCAL STORAGE TO REPLACE CART STATE
+       
+            if(items === null){
+                //if there are no items in local storage create 'cartData' key and add an item
+                const newObj = {...product}
+                newObj.quantity = 1
+                localStorage.setItem('cartData', JSON.stringify([newObj]))
+            }else{
+                //if there are items check these conditions:
+
+                if(storageExists === undefined){
+                    // if there is no copy then add it to storage with a quantity of 1
+                    const newObj = {...product}
+                    newObj.quantity = 1
+                    localStorage.setItem('cartData', JSON.stringify([...items, newObj]))
+                }else{
+                    // a copy must exist then we need to update local storage with it
+                    const newObj = {...storageExists}
+                    const quantity =  parseFloat(newObj.quantity)
+                    newObj.quantity = quantity + 1 ;
+                    
+                    const test = items.map((item)=>{
+                        if(item.id === newObj.id){
+                            return newObj
+                        }else{
+                            return item
+                        }
+                    })
+                    console.log(test)
+                    localStorage.removeItem("cartData")
+                    localStorage.setItem("cartData", JSON.stringify(test))
+                }
+            }
+        
+ //*********************************************************
+
+
+
+
         const productExists = cart.find(c => c.id === product.id);
 
         if (productExists === undefined) {
@@ -22,19 +67,19 @@ function ProductPage() {
             newObj.quantity = 1
             setCart([...cart, newObj])
 
-            } else {
-                const newObj = {...productExists}
-                const quantity =  parseFloat(newObj.quantity)
-                newObj.quantity = quantity + 1 ;
+        } else {
+            const newObj = {...productExists}
+            const quantity =  parseFloat(newObj.quantity)
+            newObj.quantity = quantity + 1 ;
 
-                setCart(cart.map((item)=>{
-                    if(item.id === newObj.id){
-                        return newObj
-                    }else{
-                        return item
-                    }
-                }))
-            }
+            setCart(cart.map((item)=>{
+                if(item.id === newObj.id){
+                    return newObj
+                }else{
+                    return item
+                }
+            }))
+        }
     }
 
     
