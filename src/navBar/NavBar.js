@@ -12,11 +12,13 @@ import cartIcon from "./icons/shopping-cart-icon.svg"
 import "./NavBar.css";
 import SideCart from './sideCart/SideCart';
 import NavList from './navList/NavList';
+import HamburgerMenu from './hamburgerMenu/HamburgerMenu';
 
 function NavBar() {
 
     const {cartCount, setCartCount} = useContext(CartContext)
-    const [openCart, setOpenCart] = useState(false)
+    const [openSideCart, setSideOpenCart] = useState(false)
+    const [openHamburgerMenu, setOpenHamburgerMenu] = useState(false)
 
     const [matches, setMatches] = useState(
         window.matchMedia("(min-width: 1000px)").matches
@@ -53,7 +55,12 @@ function NavBar() {
                     { !matches ?
                         <div className="nB__hB-container temp">
                             <div className="nB__icon-container">
-                                <img src={hamburgerIcon} className="nB__icon" alt="Hamburger Icon"/>
+                                    <button 
+                                    className="nB__icon__button"
+                                    onClick={()=>{setOpenHamburgerMenu(!openHamburgerMenu)}}
+                                    >
+                                        <img src={hamburgerIcon} className="nB__icon" alt="Hamburger Icon"/>
+                                    </button>    
                             </div>
                         </div> :
                         null
@@ -86,8 +93,8 @@ function NavBar() {
 
                         <div className="nB__icon-container">
                                     <button 
-                                    className="nB__icon__cart"
-                                    onClick={()=>{setOpenCart(!openCart)}}
+                                    className="nB__icon__button"
+                                    onClick={()=>{setSideOpenCart(!openSideCart)}}
                                     >
                                         <img src={cartIcon} className="nB__icon" alt="cart Icon"/>
                                         <p>{cartCount}</p>
@@ -97,8 +104,18 @@ function NavBar() {
                 </div>
             </div> 
             {
-                openCart && <SideCart setOpenCart={setOpenCart} openCart={openCart}/>
-
+                openSideCart && 
+                    <SideCart 
+                        setOpenCart={setSideOpenCart} 
+                        openCart={openSideCart}
+                    />
+            }
+            {
+                openHamburgerMenu && 
+                    <HamburgerMenu 
+                        openHamburgerMenu={openHamburgerMenu} 
+                        setOpenHamburgerMenu={setOpenHamburgerMenu} 
+                    />
             }
             <Outlet/>
         </>
