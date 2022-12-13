@@ -1,7 +1,7 @@
 import "./CategoryBanner.css"
-import fashionImage from "../images/fashion.jpg"
-import jewelryImage from "../images/jewelry.jpg"
-import phoneImage from "../images/phone.jpg"
+import fashionImage from "../../globalImages/fashion.jpg"
+import jewelryImage from "../../globalImages/jewelry.jpg"
+import phoneImage from "../../globalImages/phone.jpg"
 
 function CatergoryBanner() {
     return (

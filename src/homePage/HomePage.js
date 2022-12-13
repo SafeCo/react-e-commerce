@@ -3,7 +3,7 @@ import {motion, } from "framer-motion"
 import Card from './components/Card'
 import Footer from "../globalComponents/footer/Footer"
 import "./HomePage.css"
-import reeds from "./images/reeds.jpg"
+import reeds from "../globalImages/reeds.jpg"
 import CatergoryBanner from "./components/CatergoryBanner"
 
 function HomePage() {
