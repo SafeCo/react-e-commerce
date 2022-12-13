@@ -1,4 +1,6 @@
 import {useState, useEffect, useContext} from 'react'
+import { motion, AnimatePresence } from 'framer-motion';
+
 
 import { CartContext } from '../context/CartContext';
 import { Outlet, Link } from "react-router-dom";
@@ -109,14 +111,25 @@ function NavBar() {
 
                     </div>
                 </div>
-            </div> 
-            {modalOpen && 
-                <ModalWrapper 
-                    modalState={modalOpen}  
-                    setModalOpen={setModalOpen} 
-                    componentName={componentName} 
-                />
+            </div>
+            <AnimatePresence>
+            {modalOpen &&
+                    <motion.div
+                        key="modal"
+                        initial={{opacity: 1}}
+                        animate={{opacity: 1}}
+                        exit={{opacity: 1}}
+                        transition={{duration: 1}}
+                        
+                    >
+                        <ModalWrapper 
+                            modalState={modalOpen}  
+                            setModalOpen={setModalOpen} 
+                            componentName={componentName} 
+                        />
+                    </motion.div> 
             }
+            </AnimatePresence> 
             <Outlet/>
         </>
     
