@@ -1,4 +1,4 @@
-import {useContext , useEffect, useState} from 'react'
+import {useContext} from 'react'
 import { CartContext } from '../../context/CartContext';
 
 import "./SideCart.css"
@@ -9,7 +9,7 @@ import EmptyCart from './components/EmptyCart';
 import cartIcon from "../icons/shopping-cart-icon.svg"
 
 
-function SideCart() {
+function SideCart({modalFlipSwitch}) {
 
     const {cart, setCart} = useContext(CartContext)
 
@@ -51,7 +51,7 @@ function SideCart() {
                 <div className="sideCart__header__exit-container">
                     <button 
                     className="sideCart__header__exit"
-                    // onClick={(e)=>{modalSwitch(e)}}
+                    onClick={(e)=>{modalFlipSwitch()}}
                     >
                         <p>X</p>
                     </button>

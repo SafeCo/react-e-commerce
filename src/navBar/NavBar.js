@@ -12,13 +12,12 @@ import searchIcon from "./icons/search-icon.svg"
 import cartIcon from "./icons/shopping-cart-icon.svg"
 
 //COMPONENTS
-import SideCart from './sideCart/SideCart';
 import NavList from './navList/NavList';
-import HamburgerMenu from './hamburgerMenu/HamburgerMenu';
 import ModalWrapper from '../globalComponents/modalWrapper/ModalWrapper';
+
 function NavBar() {
 
-    const {cartCount, setCartCount} = useContext(CartContext)
+    const {cartCount} = useContext(CartContext)
 	const [modalOpen, setModalOpen] = useState(false)
     const [componentName, setComponentName] = useState("")
 
@@ -35,29 +34,6 @@ function NavBar() {
             .removeEventListener('change', e => setMatches( e.matches ));
         }
     }, []);
-
-    // const modalSwitchOpen= (e)=>{
-    //     console.log(e.currentTarget)
-	// 	switch(e.currentTarget.name){
-	// 		case "hamburgerMenu":
-    //             console.log("owkring")
-	// 			setModalChild(
-	// 				<HamburgerMenu/>
-	// 			)
-    //             break;
-    //         case "sideCart":
-    //             setModalChild(
-    //                 <SideCart
-    //                     modalState={modalOpen} 
-    //                     modalSwitch={modalSwitchOpen}
-    //                 />
-    //             )
-    //             break;
-	// 		default :
-	// 			break;
-	// 	}
-	// 	setModalOpen(!modalOpen)
-	// }
 
     return (
         <>

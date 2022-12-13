@@ -5,13 +5,24 @@ import phoneImage from "../../globalImages/phone.jpg"
 import essentialsImage from "../../globalImages/essentials.jpg"
 import saleImage from "../../globalImages/watch.jpg"
 
-function HamburgerMenu() {
+function HamburgerMenu({modalFlipSwitch}) {
 
     return (
        
             <div className="hM__box">
-                <header className="hM__logo__container">
-                    <h3>Simple.</h3>
+                <header className="hM__header__container">
+                    <div className="empty" ></div>
+                    <div className="hM__logo__container">
+                        <h3>Simple.</h3>
+                    </div>
+                    <div className="hM__exitButton__container">
+                        <button 
+                            className="hM__exitButton"
+                            onClick={()=>{modalFlipSwitch()}}
+                        >
+                            <p>X</p>
+                        </button>
+                    </div>
                 </header>
                 <main>
                     <ul className="hM__options__container">

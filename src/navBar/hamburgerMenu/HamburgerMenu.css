@@ -26,11 +26,36 @@
 
                                                         /* HEADER */
 
-.hM__logo__container{
-    flex: 1 1 0;
+.hM__header__container{
     font-size: 4rem;
     display: flex;
     justify-content: center;
+}
+.empty{
+    flex: 1 1 0;
+}
+.hM__logo__container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 8 1 0;
+}
+
+.hM__exitButton__container{
+    display: flex;
+    flex: 1 1 0;
+    justify-content: center;
+    align-items: center;
+}
+
+.hM__exitButton{
+    font-weight: 600;
+    height: 30px;
+    width: 30px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    background-color: transparent;
 }
 
                                                         /* MAIN */

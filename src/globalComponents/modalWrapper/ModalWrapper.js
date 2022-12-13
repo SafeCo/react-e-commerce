@@ -18,12 +18,15 @@ export default function ModalWrapper(props){
         switch(props.componentName){
 			case "hamburgerMenu":
 				setModalChild(
-					<HamburgerMenu/>
+					<HamburgerMenu
+                        modalFlipSwitch={modalFlipSwitch}
+                    />
 				)
                 break;
             case "sideCart":
                 setModalChild(
                     <SideCart
+                        modalFlipSwitch={modalFlipSwitch}
                     />
                 )
                 break;
