@@ -19,9 +19,8 @@ import ModalWrapper from '../globalComponents/modalWrapper/ModalWrapper';
 function NavBar() {
 
     const {cartCount, setCartCount} = useContext(CartContext)
-    const [openSideCart, setSideOpenCart] = useState(false)
-    const [modalChild, setModalChild]= useState("")
 	const [modalOpen, setModalOpen] = useState(false)
+    const [componentName, setComponentName] = useState("")
 
     const [matches, setMatches] = useState(
         window.matchMedia("(min-width: 1000px)").matches
@@ -37,32 +36,28 @@ function NavBar() {
         }
     }, []);
 
-    const modalSwitchOpen= (e)=>{
-        console.log(e.currentTarget.name)
-		switch(e.currentTarget.name){
-			case "hamburgerMenu":
-                console.log("owkring")
-				setModalChild(
-					<HamburgerMenu/>
-				)
-                break;
-            case "viewComments":
-                setModalChild(
-                    // <ViewComments 
-                    //     user={user}
-                    //     postPhotoUrl={profilePic}
-                    //     caption={caption}
-                    //     postId={postId}
-                    //     username={username}
-                    //     imageUrl={imageUrl}  
-                    // />
-                )
-                break;
-			default :
-				break;
-		}
-		setModalOpen(!modalOpen)
-	}
+    // const modalSwitchOpen= (e)=>{
+    //     console.log(e.currentTarget)
+	// 	switch(e.currentTarget.name){
+	// 		case "hamburgerMenu":
+    //             console.log("owkring")
+	// 			setModalChild(
+	// 				<HamburgerMenu/>
+	// 			)
+    //             break;
+    //         case "sideCart":
+    //             setModalChild(
+    //                 <SideCart
+    //                     modalState={modalOpen} 
+    //                     modalSwitch={modalSwitchOpen}
+    //                 />
+    //             )
+    //             break;
+	// 		default :
+	// 			break;
+	// 	}
+	// 	setModalOpen(!modalOpen)
+	// }
 
     return (
         <>
@@ -74,7 +69,11 @@ function NavBar() {
                                     <button 
                                     className="nB__icon__button"
                                     name="hamburgerMenu" 
-                                    onClick={(e)=>{modalSwitchOpen(e); console.log("click")}}
+                                    onClick={(e)=>{
+                                        setComponentName(e.currentTarget.name);
+                                        setModalOpen(!modalOpen);
+                                        }
+                                    }
                                     >
                                         <img src={hamburgerIcon} className="nB__icon" alt="Hamburger Icon"/>
                                     </button>    
@@ -111,7 +110,12 @@ function NavBar() {
                         <div className="nB__icon-container">
                                     <button 
                                     className="nB__icon__button"
-                                    onClick={()=>{setSideOpenCart(!openSideCart)}}
+                                    name="sideCart" 
+                                    onClick={(e)=>{
+                                        setComponentName(e.currentTarget.name);
+                                        setModalOpen(!modalOpen);
+                                        }
+                                    }
                                     >
                                         <img src={cartIcon} className="nB__icon" alt="cart Icon"/>
                                         <p>{cartCount}</p>
@@ -120,17 +124,12 @@ function NavBar() {
                     </div>
                 </div>
             </div> 
-            {
-                openSideCart && 
-                    <SideCart 
-                        setOpenCart={setSideOpenCart} 
-                        openCart={openSideCart}
-                    />
-            }
             {modalOpen && 
-                <ModalWrapper modalState={modalOpen} modalSwitch={modalSwitchOpen}>
-                    {modalChild}
-                </ModalWrapper>
+                <ModalWrapper 
+                    modalState={modalOpen}  
+                    setModalOpen={setModalOpen} 
+                    componentName={componentName} 
+                />
             }
             <Outlet/>
         </>

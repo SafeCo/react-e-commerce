@@ -1,5 +1,9 @@
+import {useEffect, useState} from 'react'
+
 import './ModalWrapper.css'
-import {useEffect} from 'react'
+
+import HamburgerMenu from '../../navBar/hamburgerMenu/HamburgerMenu'
+import SideCart from '../../navBar/sideCart/SideCart'
 
 //HOW TO USE:
 // This component receives the following props children, modalState and modalSwitch
@@ -8,6 +12,29 @@ import {useEffect} from 'react'
 // modalSwitch is the prop function which activates to switch the modalState in the parent component
 
 export default function ModalWrapper(props){
+
+    const [modalChild, setModalChild]= useState("")
+    useEffect(()=>{
+        switch(props.componentName){
+			case "hamburgerMenu":
+				setModalChild(
+					<HamburgerMenu/>
+				)
+                break;
+            case "sideCart":
+                setModalChild(
+                    <SideCart
+                    />
+                )
+                break;
+			default :
+				break;
+		}
+    },[])
+	
+    const modalFlipSwitch = ()=>{
+        props.setModalOpen(!props.modalState)
+    }
 
     const modalSetter = (modalState, scrollBarWidth)=>{
 		if(window.matchMedia("(max-width: 480px)").matches && modalState === false ){
@@ -44,20 +71,16 @@ export default function ModalWrapper(props){
         <div className="modalWrapper__container">
             <div className="modalWrapper__darkBg" onClick={(e)=>  {
                 if(e.currentTarget === e.target ){
-                    if(props.buttonStateHistory){
-                        props.updateButtonState(props.buttonStateHistory[0].name)
-                        
-                    }
-                    modalSetter(!props.modalState)
-                    props.modalSwitch(e) 
+                    modalSetter(!props.modalState);
+                    modalFlipSwitch();
                     } else if (e.target.name === "cancelModal"){
-                        modalSetter(!props.modalState)
-                        props.modalSwitch(e) 
+                        modalSetter(!props.modalState);
+                        modalFlipSwitch();
                     }
                 } 
             }
             >
-            {props.children}
+            {modalChild}
             </div>
         </div>
     )
