@@ -1,24 +1,27 @@
 import {useState, useEffect, useContext} from 'react'
 
 import { CartContext } from '../context/CartContext';
-
 import { Outlet, Link } from "react-router-dom";
-import { motion } from 'framer-motion';
-import logoBig from './logo-big.svg'
+
+import "./NavBar.css";
+
+// ICONS
 import accountIcon from "./icons/account-icon.svg"
 import hamburgerIcon from "./icons/hamburger-icon.svg"
 import searchIcon from "./icons/search-icon.svg"
 import cartIcon from "./icons/shopping-cart-icon.svg"
-import "./NavBar.css";
+
+//COMPONENTS
 import SideCart from './sideCart/SideCart';
 import NavList from './navList/NavList';
 import HamburgerMenu from './hamburgerMenu/HamburgerMenu';
-
+import ModalWrapper from '../globalComponents/modalWrapper/ModalWrapper';
 function NavBar() {
 
     const {cartCount, setCartCount} = useContext(CartContext)
     const [openSideCart, setSideOpenCart] = useState(false)
-    const [openHamburgerMenu, setOpenHamburgerMenu] = useState(false)
+    const [modalChild, setModalChild]= useState("")
+	const [modalOpen, setModalOpen] = useState(false)
 
     const [matches, setMatches] = useState(
         window.matchMedia("(min-width: 1000px)").matches
@@ -34,19 +37,32 @@ function NavBar() {
         }
     }, []);
 
-    const itemVariant= {
-        hidden: {
-            borderBottom: "solid #FFFFFF 2px",
-            
-        },
-
-        visible: {
-            borderBottom: "solid #000000 2px",
-            transition:{
-                duration: 0.2
-            }
-        }
-    }
+    const modalSwitchOpen= (e)=>{
+        console.log(e.currentTarget.name)
+		switch(e.currentTarget.name){
+			case "hamburgerMenu":
+                console.log("owkring")
+				setModalChild(
+					<HamburgerMenu/>
+				)
+                break;
+            case "viewComments":
+                setModalChild(
+                    // <ViewComments 
+                    //     user={user}
+                    //     postPhotoUrl={profilePic}
+                    //     caption={caption}
+                    //     postId={postId}
+                    //     username={username}
+                    //     imageUrl={imageUrl}  
+                    // />
+                )
+                break;
+			default :
+				break;
+		}
+		setModalOpen(!modalOpen)
+	}
 
     return (
         <>
@@ -57,7 +73,8 @@ function NavBar() {
                             <div className="nB__icon-container">
                                     <button 
                                     className="nB__icon__button"
-                                    onClick={()=>{setOpenHamburgerMenu(!openHamburgerMenu)}}
+                                    name="hamburgerMenu" 
+                                    onClick={(e)=>{modalSwitchOpen(e); console.log("click")}}
                                     >
                                         <img src={hamburgerIcon} className="nB__icon" alt="Hamburger Icon"/>
                                     </button>    
@@ -110,12 +127,10 @@ function NavBar() {
                         openCart={openSideCart}
                     />
             }
-            {
-                openHamburgerMenu && 
-                    <HamburgerMenu 
-                        openHamburgerMenu={openHamburgerMenu} 
-                        setOpenHamburgerMenu={setOpenHamburgerMenu} 
-                    />
+            {modalOpen && 
+                <ModalWrapper modalState={modalOpen} modalSwitch={modalSwitchOpen}>
+                    {modalChild}
+                </ModalWrapper>
             }
             <Outlet/>
         </>

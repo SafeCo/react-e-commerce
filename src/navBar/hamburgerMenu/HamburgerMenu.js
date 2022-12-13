@@ -5,20 +5,10 @@ import phoneImage from "../../globalImages/phone.jpg"
 import essentialsImage from "../../globalImages/essentials.jpg"
 import saleImage from "../../globalImages/watch.jpg"
 
-function HamburgerMenu({openHamburgerMenu, setOpenHamburgerMenu}) {
-
-    const closeModal = (e)=>{
-        if(e.currentTarget === e.target){
-            setOpenHamburgerMenu(!openHamburgerMenu)
-        }else{
-            return
-        }
-    }
+function HamburgerMenu() {
 
     return (
-        <div className="hM__container"
-            onClick={(e)=>{closeModal(e)}}
-        >
+       
             <div className="hM__box">
                 <header className="hM__logo__container">
                     <h3>Simple.</h3>
@@ -66,7 +56,6 @@ function HamburgerMenu({openHamburgerMenu, setOpenHamburgerMenu}) {
 
             </div>
 
-        </div>
     )
 }
 
