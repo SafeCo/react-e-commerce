@@ -72,31 +72,41 @@ function NavBar() {
                     }
 
                     {/* When the icon is clicked the search bar expands from right to left and menu dissappears */}
-                    <div className=" nB__icons-container temp">
+                    <div className=" nB__icons__container temp">
+                        <div className="nB__icons-container">
+                            <div className="nB__icon-container temp2">
+                                <img src={searchIcon} className="nB__icon" alt="search Icon"/>
+                            </div>
 
-                        <div className="nB__icon-container">
-                            <img src={searchIcon} className="nB__icon" alt="search Icon"/>
-                        </div>
+                            <div className="nB__icon-container temp2">
+                                {matches && <p className="nB__icon__text">Account</p>}
+                                <img src={accountIcon} className="nB__icon" alt="account Icon"/>
+                            </div>
 
-                        <div className="nB__icon-container">
-                            <p>Account</p>
-                            <img src={accountIcon} className="nB__icon" alt="account Icon"/>
-                        </div>
-
-                        <div className="nB__icon-container">
-                                    <button 
-                                    className="nB__icon__button"
-                                    name="sideCart" 
-                                    onClick={(e)=>{
-                                        setComponentName(e.currentTarget.name);
-                                        setModalOpen(!modalOpen);
-                                        }
+                            <div className="nB__icon-container temp2">
+                                <button 
+                                className="nB__icon__button cart"
+                                name="sideCart" 
+                                onClick={(e)=>{
+                                    setComponentName(e.currentTarget.name);
+                                    setModalOpen(!modalOpen);
                                     }
-                                    >
-                                        <img src={cartIcon} className="nB__icon" alt="cart Icon"/>
-                                        <p>{cartCount}</p>
-                                    </button>                            
+                                }
+                                >
+                                    {matches && 
+                                        <p className="nB__icon__text">Cart</p>
+                                    }
+                                    <img src={cartIcon} className="nB__icon" alt="cart Icon"/>
+                                    { cartCount > 0 &&
+                                        <div className="nB__icon__count">
+                                            <p>{cartCount}</p>
+                                        </div>
+                                    }
+                                </button>                            
+                            </div>
                         </div>
+                        
+
                     </div>
                 </div>
             </div> 

@@ -9,6 +9,8 @@
     background-color: white;
     border-bottom: solid lightgray 1px;
     font-size: 1.5rem;
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
 
@@ -20,13 +22,16 @@
 }
 
 .temp{
-    border: solid red 1px;
+    /* border: solid red 1px; */
+}
+
+.temp2{
+    /* border: solid blue 1px; */
 }
                                                             /* HAMBURGER CONTAINER */
 .nB__hB-container{
     display: flex;
     flex: 1 1 0;
-    padding-left: 30px;
 }
 
                                                             /* LOGO CONTAINER */
@@ -42,11 +47,20 @@
 }
 
                                                             /* NAV ICONS */
-.nB__icons-container{
+.nB__icons__container{
+    /* border: solid red 1px; */
     display: flex;
     flex-direction: row;
+    justify-content: center;
     flex: 1 1 0;
-    justify-content: space-around;
+}
+.nB__icons-container{
+    /* border: solid orange 1px; */
+    display: flex;
+    max-width: 250px;
+    width: 100%;
+    justify-content: space-between;
+
 }
 
 .nB__icon-container{
@@ -55,6 +69,11 @@
     justify-content: center;
     align-items: center;
     cursor: pointer;
+}
+
+.nB__icon__text{
+    text-transform: uppercase;
+    font-size: 1.2rem;
 }
 
 .nB__icon__button{
@@ -68,4 +87,37 @@
 .nB__icon{
     width: 15px;
     margin-left: 3px;
+}
+.cart{
+    position: relative;
+}
+.nB__icon__count{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: solid red 1px;
+    background-color: red;
+    color: white;
+    border-radius: 50%;
+    width: 10px;
+    height: 10px;
+    font-size: 1rem;
+    top: -10%;
+    right: -10%;
+}
+
+
+@media (max-width: 1000px) {
+    .nB__icons-container{
+        justify-content: flex-end;
+    }
+    .nB__icon-container{
+        margin-left: 20px;
+    }
+    
+    .nB__icon{
+        width: 20px;
+    }
+
 }
