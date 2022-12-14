@@ -23,6 +23,7 @@ function NavBar() {
     const {cartCount} = useContext(CartContext)
 	const [modalOpen, setModalOpen] = useState(false)
     const [componentName, setComponentName] = useState("")
+    const [search, setSearch] = useState(false)
 
 //GETTING NAVBAR HEIGHT
     const [height, setHeight] = useState();
@@ -106,10 +107,7 @@ function NavBar() {
                                 <button 
                                     className="nB__icon__button cart"
                                     name="search" 
-                                    onClick={(e)=>{
-                                        
-                                        }
-                                    }
+                                    onClick={()=>setSearch(!search)}
                                     >
                                     <img src={searchIcon} className="nB__icon" alt="search Icon"/>
                                 </button>
@@ -146,7 +144,7 @@ function NavBar() {
 
                     </div>
                 </div>
-                <SearchSection/>
+                <SearchSection search={search} setSearch={setSearch}/>
             </div>
             <AnimatePresence>
             {modalOpen &&

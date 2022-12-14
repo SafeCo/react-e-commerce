@@ -7,5 +7,42 @@
     left: 0;
     height: 100px;
     width: 100%;
+    font-family: var(--font-family-sans-serif);
+    
+}
+.searchSection__input__container{
+    display: flex;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.empty{
+    flex: 1 1 0;
+}
+.searchSection__input-container{
+    flex: 8 1 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
+}
+.searchSection__input{
+    border:none;
+    border-bottom: solid gray 1px;
+    outline: none;
+    padding-bottom: 5px;
+    width: 400px;
+}
+
+
+.searchSection__closeButton-container{
+    flex: 1 1 0;
+}
+
+.searchSection__closeButton{
+    cursor: pointer;
+    border: none;
+    border-bottom: solid gray 1px;
+    outline: none;
+    background-color: transparent;
+    font-family: var(--font-family-sans-serif);
 }
