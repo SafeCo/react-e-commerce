@@ -23,7 +23,7 @@
     font-weight: 600;
 }
 
-.footer__firstCol li{
+.footer__socialMedia li{
     margin-top: 10px;
 }
 
@@ -38,28 +38,55 @@
 
 .footer__social-icon{
     width: 20px;
-    /* margin: 10px 5px; */
 }
-/* .nomargin{
-    margin: 10px 0;
-} */
-
 
 .colSpace{
     list-style: none;
-    
 }
-.footer__secondCol li{
+.footer__shop li{
     margin-top: 2px;
 }
-.footer__thirdCol li{
+.footer__service li{
     margin-top: 2px;
 }
-.footer__fourthCol{
+.footer__join{
     margin-top: 2px;
 }
 
+                                                /* SIGN UP */
+.footer__signUp{
+}
 
+.mobile{
+    width: 100%;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.footer__input-container{
+    display: flex;
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+.footer__input-button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: none;
+    background-color: black;
+    padding: 5px;
+}
+.footer__input-icon{
+    width: 12px;
+
+}
+.footer__input{
+    background-color: white;
+    border: none;
+    outline: none;
+    width: 100%;
+    padding: 5px;
+}
 
 .footer__tC{
     display: flex;
