@@ -1,7 +1,6 @@
 
 .modalWrapper__container{
     font-family: var(--font-family-sans-serif);
-
     position: fixed;
     height: 100vh;
     width: 100vw;
@@ -21,8 +20,10 @@
     position: absolute;
     overflow-y: scroll;
     display: flex;
-    /* align-items: center;
-    justify-content: center; */
+}
+
+.modal__sideCart{
+    justify-content: flex-end;
 }
 
 

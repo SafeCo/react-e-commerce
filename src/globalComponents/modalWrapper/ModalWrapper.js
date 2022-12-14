@@ -73,16 +73,21 @@ export default function ModalWrapper(props){
 
     return (
         <div className="modalWrapper__container">
-            <div className="modalWrapper__darkBg" onClick={(e)=>  {
-                if(e.currentTarget === e.target ){
-                    modalSetter(!props.modalState);
-                    modalFlipSwitch();
-                    } else if (e.target.name === "cancelModal"){
+            <div 
+                className={ props.componentName === "sideCart"?
+                    "modalWrapper__darkBg modal__sideCart" :
+                    "modalWrapper__darkBg"
+                    }
+                onClick={(e)=>  {
+                    if(e.currentTarget === e.target ){
                         modalSetter(!props.modalState);
                         modalFlipSwitch();
-                    }
-                } 
-            }
+                        } else if (e.target.name === "cancelModal"){
+                            modalSetter(!props.modalState);
+                            modalFlipSwitch();
+                        }
+                    } 
+                }
             >
             {modalChild}
             </div>
