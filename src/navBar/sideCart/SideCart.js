@@ -1,4 +1,5 @@
 import {useContext} from 'react'
+import { motion } from 'framer-motion';
 import { CartContext } from '../../context/CartContext';
 
 import "./SideCart.css"
@@ -12,6 +13,19 @@ import cartIcon from "../icons/shopping-cart-icon.svg"
 function SideCart({modalFlipSwitch}) {
 
     const {cart, setCart} = useContext(CartContext)
+
+    const boxVariant={
+        hidden:{
+            x: "100%"
+        },
+        visible: {
+            x: "0",
+            transition: {
+                when:"beforeChildren",
+                duration:0.4
+            }
+        }
+    }
 
     const removeItem = (id)=>{
         setCart(cart.filter((item)=>{
@@ -34,9 +48,16 @@ function SideCart({modalFlipSwitch}) {
     
 
     return (
-        <div className="sideCart__box">
+        <motion.div 
+            className="sideCart__box"
+            variants={boxVariant}
+            initial="hidden"
+            animate="visible"
+            exit={{x: "100%", transition: {duration: 1}}}
+        >
+
+
             <header className="sideCart__header">
-            
                 <div className="sideCart__header__icon-container" >
                     <img src={cartIcon} 
                     className="sideCart__header__icon"
@@ -89,7 +110,7 @@ function SideCart({modalFlipSwitch}) {
                     <EmptyCart/>
                 )
             }
-        </div>
+        </motion.div>
     )
 }
 
