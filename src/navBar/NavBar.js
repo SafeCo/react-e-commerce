@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 
 
 import { CartContext } from '../context/CartContext';
+import { MediaContext } from '../context/MediaContext';
 import { Outlet, Link } from "react-router-dom";
 
 import "./NavBar.css";
@@ -21,6 +22,7 @@ import SearchSection from './searchSection/SearchSection';
 function NavBar() {
 
     const {cartCount} = useContext(CartContext)
+    const { matches } = useContext(MediaContext)
 	const [modalOpen, setModalOpen] = useState(false)
     const [componentName, setComponentName] = useState("")
     const [search, setSearch] = useState(false)
@@ -47,19 +49,19 @@ function NavBar() {
         console.log(height)
     },[height])
 
-    const [matches, setMatches] = useState(
-        window.matchMedia("(min-width: 1000px)").matches
-    )
-    useEffect(() => {
-        window
-        .matchMedia("(min-width: 1000px)")
-        .addEventListener('change', e => setMatches( e.matches ));
-        return ()=>{
-            window
-            .matchMedia("(min-width: 1000px)")
-            .removeEventListener('change', e => setMatches( e.matches ));
-        }
-    }, []);
+    // const [matches, setMatches] = useState(
+    //     window.matchMedia("(min-width: 1000px)").matches
+    // )
+    // useEffect(() => {
+    //     window
+    //     .matchMedia("(min-width: 1000px)")
+    //     .addEventListener('change', e => setMatches( e.matches ));
+    //     return ()=>{
+    //         window
+    //         .matchMedia("(min-width: 1000px)")
+    //         .removeEventListener('change', e => setMatches( e.matches ));
+    //     }
+    // }, []);
 
     return (
         <>
