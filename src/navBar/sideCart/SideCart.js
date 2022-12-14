@@ -55,8 +55,6 @@ function SideCart({modalFlipSwitch}) {
             animate="visible"
             exit={{x: "100%", transition: {duration: 1}}}
         >
-
-
             <header className="sideCart__header">
                 <div className="sideCart__header__icon-container" >
                     <img src={cartIcon} 

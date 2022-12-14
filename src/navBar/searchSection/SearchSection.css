@@ -1,0 +1,11 @@
+.searchSection__container{
+    border-top: solid lightgray 1px;
+    background-color: white;    
+    position: absolute;
+    z-index: 1;
+    top: 100%;
+    left: 0;
+    height: 100px;
+    width: 100%;
+
+}

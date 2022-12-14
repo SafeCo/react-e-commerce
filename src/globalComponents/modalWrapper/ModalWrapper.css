@@ -18,6 +18,8 @@
     height: 100%;
     z-index: 4;
     position: absolute;
+    overflow-y: scroll;
+    overflow-x: hidden;
     display: flex;
 }
 

@@ -5,6 +5,7 @@ import './ModalWrapper.css'
 
 import HamburgerMenu from '../../navBar/hamburgerMenu/HamburgerMenu'
 import SideCart from '../../navBar/sideCart/SideCart'
+import SearchSection from '../../navBar/searchSection/SearchSection'
 
 //HOW TO USE:
 // This component receives the following props children, modalState and modalSwitch
@@ -15,6 +16,7 @@ import SideCart from '../../navBar/sideCart/SideCart'
 export default function ModalWrapper(props){
 
     const [modalChild, setModalChild]= useState("")
+    
     useEffect(()=>{
         switch(props.componentName){
 			case "hamburgerMenu":

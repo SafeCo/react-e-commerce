@@ -1,4 +1,4 @@
-import {useState, useEffect, useContext} from 'react'
+import {useState, useEffect, useContext, useRef} from 'react'
 import { motion, AnimatePresence } from 'framer-motion';
 
 
@@ -16,12 +16,35 @@ import cartIcon from "./icons/shopping-cart-icon.svg"
 //COMPONENTS
 import NavList from './navList/NavList';
 import ModalWrapper from '../globalComponents/modalWrapper/ModalWrapper';
+import SearchSection from './searchSection/SearchSection';
 
 function NavBar() {
 
     const {cartCount} = useContext(CartContext)
 	const [modalOpen, setModalOpen] = useState(false)
     const [componentName, setComponentName] = useState("")
+
+//GETTING NAVBAR HEIGHT
+    const [height, setHeight] = useState();
+
+    const observedDiv = useRef(null);
+    useEffect(() => {
+        resizeObserver.observe(observedDiv.current);
+        return function cleanup() {
+            resizeObserver.disconnect();
+        }
+    })
+    const handleElementResized = () => {
+        if(observedDiv.current.offsetHeight !== height) {
+            setHeight(observedDiv.current.offsetHeight);
+        }
+    }
+    const resizeObserver = new ResizeObserver(handleElementResized);
+
+
+    useEffect(()=>{
+        console.log(height)
+    },[height])
 
     const [matches, setMatches] = useState(
         window.matchMedia("(min-width: 1000px)").matches
@@ -39,10 +62,13 @@ function NavBar() {
 
     return (
         <>
-            <div className="nB__container">
+            <div 
+                className="nB__container"
+                ref={observedDiv}
+            >
                 <div className="nB__box">
                     { !matches ?
-                        <div className="nB__hB-container temp">
+                        <div className="nB__hB-container">
                             <div className="nB__icon-container">
                                     <button 
                                     className="nB__icon__button"
@@ -59,7 +85,7 @@ function NavBar() {
                         </div> :
                         null
                     }
-                    <div className="nB__logo__container temp">
+                    <div className="nB__logo__container">
                         <div className="nB__logo-container">
                             <Link to={"/"} style={{textDecoration: "none", color: "none"}}>
                                 <h3>Simple.</h3>
@@ -74,18 +100,27 @@ function NavBar() {
                     }
 
                     {/* When the icon is clicked the search bar expands from right to left and menu dissappears */}
-                    <div className=" nB__icons__container temp">
+                    <div className=" nB__icons__container">
                         <div className="nB__icons-container">
-                            <div className="nB__icon-container temp2">
-                                <img src={searchIcon} className="nB__icon" alt="search Icon"/>
+                            <div className="nB__icon-container">
+                                <button 
+                                    className="nB__icon__button cart"
+                                    name="search" 
+                                    onClick={(e)=>{
+                                        
+                                        }
+                                    }
+                                    >
+                                    <img src={searchIcon} className="nB__icon" alt="search Icon"/>
+                                </button>
                             </div>
 
-                            <div className="nB__icon-container temp2">
+                            <div className="nB__icon-container">
                                 {matches && <p className="nB__icon__text">Account</p>}
                                 <img src={accountIcon} className="nB__icon" alt="account Icon"/>
                             </div>
 
-                            <div className="nB__icon-container temp2">
+                            <div className="nB__icon-container">
                                 <button 
                                 className="nB__icon__button cart"
                                 name="sideCart" 
@@ -111,6 +146,7 @@ function NavBar() {
 
                     </div>
                 </div>
+                <SearchSection/>
             </div>
             <AnimatePresence>
             {modalOpen &&
@@ -125,12 +161,13 @@ function NavBar() {
                         <ModalWrapper 
                             modalState={modalOpen}  
                             setModalOpen={setModalOpen} 
-                            componentName={componentName} 
+                            componentName={componentName}
+                            navBarHeight={height}
                         />
                     </motion.div> 
             }
             </AnimatePresence> 
-            <Outlet/>
+            <Outlet context={{height}}/>
         </>
     
     )
