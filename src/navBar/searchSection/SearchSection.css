@@ -10,7 +10,6 @@
 }
 
 .sS__box{
-    border: solid green 1px;
     padding-bottom: 30px;
     padding-left: 20px;
     padding-right: 20px;
@@ -135,5 +134,10 @@
 }
 
 @media (max-width: 650px) {
-    
+    .sS__suggestions{
+        flex-direction: column;
+    }
+    .sS__terms__container{
+        margin-left: 10px;
+    }
 }

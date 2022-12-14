@@ -4,18 +4,66 @@ import "./SearchSection.css"
 
 function SearchSection({search, setSearch, matches}) {
 
+    const containerVariant ={
+        hidden:{
+            height: 0,
+            transition: {
+                duration: 0.2
+            }
+
+        },
+        visible:{
+            height: "auto",
+            transition: {
+                when:"beforeChildren",
+                duration: 0.2
+            }
+        },
+        exit:{
+            height: 0,
+            transition: {
+                when:"afterChildren",
+                duration: 0.5
+            }
+        }
+    }
+
+
+    const boxVariant={
+        hidden:{
+            opacity: 0,
+            transition: {
+                duration: 0.2
+            }
+        },
+        visible:{
+            opacity: 1,
+            transition: {
+                duration: 0.3
+            }
+        }
+
+    }
     
     return (
         <AnimatePresence>
                     {search &&
                         (<motion.div
                             className="sS__container"
-                            key="searchSection1"
-                            initial={{ height: 0 }}
-                            animate={{ height: "auto" }}
-                            exit={{ height: 0 }}
+                            key="sS__container"
+                            variants={containerVariant}
+                            initial="hidden"
+                            animate="visible"
+                            exit="exit"
                         >
-                            <div className="sS__box">
+                            <motion.div 
+                                className="sS__box"
+                                key="sS__box"
+                                variants={boxVariant}
+                                initial="hidden"
+                                animate="visible"
+                                exit="hidden"
+                            >
                                 <div className="sS__input__container">
                                     <div className="sS__input-container">
                                         <input className="sS__input" type="text" placeholder="Enter Search Keyword..."/>
@@ -66,7 +114,7 @@ function SearchSection({search, setSearch, matches}) {
                                         </div>
                                     </div>
                                 </main>
-                            </div>
+                            </motion.div>
                         </motion.div>)
                     }
                 </AnimatePresence>
