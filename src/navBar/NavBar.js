@@ -144,7 +144,7 @@ function NavBar() {
 
                     </div>
                 </div>
-                <SearchSection search={search} setSearch={setSearch}/>
+                <SearchSection search={search} setSearch={setSearch} matches={matches}/>
             </div>
             <AnimatePresence>
             {modalOpen &&
