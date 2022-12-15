@@ -3,7 +3,7 @@ import fashionImage from "../../globalImages/fashion.jpg"
 import jewelryImage from "../../globalImages/jewelry.jpg"
 import phoneImage from "../../globalImages/phone.jpg"
 
-function CatergoryBanner() {
+function CategoryBanner() {
     return (
         <div className="cB__container" >
             <div className="cB__title-container">
@@ -11,6 +11,7 @@ function CatergoryBanner() {
             </div>
             
             <div className="cB__cards__container" >
+                
                 <div className="cB__card-container" >
                     <div className="cB__image-container">
                         <img className="cB__image" src={fashionImage} />
@@ -43,4 +44,4 @@ function CatergoryBanner() {
     )
 }
 
-export default CatergoryBanner
+export default CategoryBanner

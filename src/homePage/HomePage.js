@@ -5,15 +5,12 @@ import Card from './components/Card'
 import Footer from "../globalComponents/footer/Footer"
 import "./HomePage.css"
 import reeds from "../globalImages/reeds.jpg"
-import CatergoryBanner from "./components/CatergoryBanner"
+import CategoryBanner from "./components/CategoryBanner"
+import TestCarousel from "./components/TestCarousel"
 
 function HomePage() {
 
   const {navHeight} = useOutletContext()
-  console.log(window.innerHeight)
-  console.log(navHeight)
-
-
   const navBarHeight = {
     height: navHeight? window.innerHeight - navHeight : window.innerHeight - 64
   }
@@ -55,7 +52,8 @@ function HomePage() {
             
         </div>
         <main className="hP__main-container">
-          <CatergoryBanner/>
+          <CategoryBanner/>
+
           
           <div className="hP__main-title">
               <p>Our best sellers</p>
@@ -68,6 +66,7 @@ function HomePage() {
 
         </main>
         <Footer/>
+        <TestCarousel/>
     </div>
   )
 }
