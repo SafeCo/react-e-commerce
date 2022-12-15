@@ -45,9 +45,9 @@ function NavBar() {
     const resizeObserver = new ResizeObserver(handleElementResized);
 
 
-    useEffect(()=>{
-        console.log(height)
-    },[height])
+    // useEffect(()=>{
+    //     console.log(height)
+    // },[height])
 
     // const [matches, setMatches] = useState(
     //     window.matchMedia("(min-width: 1000px)").matches
