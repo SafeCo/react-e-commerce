@@ -4,7 +4,6 @@
 }
 .hP__heroImage-container{
     position: relative;
-    height: calc(100vh - 104px);
     overflow: hidden;
 }
 

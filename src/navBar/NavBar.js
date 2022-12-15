@@ -28,7 +28,7 @@ function NavBar() {
     const [search, setSearch] = useState(false)
 
 //GETTING NAVBAR HEIGHT
-    const [height, setHeight] = useState();
+    const [navHeight, setNavHeight] = useState();
 
     const observedDiv = useRef(null);
     useEffect(() => {
@@ -38,8 +38,8 @@ function NavBar() {
         }
     })
     const handleElementResized = () => {
-        if(observedDiv.current.offsetHeight !== height) {
-            setHeight(observedDiv.current.offsetHeight);
+        if(observedDiv.current.offsetHeight !== navHeight) {
+            setNavHeight(observedDiv.current.offsetHeight);
         }
     }
     const resizeObserver = new ResizeObserver(handleElementResized);
@@ -143,12 +143,11 @@ function NavBar() {
                             modalState={modalOpen}  
                             setModalOpen={setModalOpen} 
                             componentName={componentName}
-                            navBarHeight={height}
                         />
                     </motion.div> 
             }
             </AnimatePresence> 
-            <Outlet context={{height}}/>
+            <Outlet context={{navHeight}}/>
         </>
     
     )

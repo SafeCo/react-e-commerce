@@ -1,4 +1,5 @@
-import {motion, } from "framer-motion"
+import {motion } from "framer-motion"
+import { useOutletContext } from "react-router-dom"
 
 import Card from './components/Card'
 import Footer from "../globalComponents/footer/Footer"
@@ -7,6 +8,16 @@ import reeds from "../globalImages/reeds.jpg"
 import CatergoryBanner from "./components/CatergoryBanner"
 
 function HomePage() {
+
+  const {navHeight} = useOutletContext()
+  console.log(window.innerHeight)
+  console.log(navHeight)
+
+
+  const navBarHeight = {
+    height: navHeight? window.innerHeight - navHeight : window.innerHeight - 64
+  }
+
   const buttonVariant= {
     visible : {
         scale: 1.1,
@@ -20,7 +31,7 @@ function HomePage() {
 
   return (
     <div className="hP__container">
-        <div className="hP__heroImage-container">
+        <div className="hP__heroImage-container" style={navBarHeight}>
             <img className="hP__heroImage" src={reeds}/>
             <div className="hP__heroImage__text-container">
               <p className="hP__heroImage__text">Simple elegance </p>
