@@ -7,7 +7,7 @@ function FooterList() {
                 <div>
                     <h4>Shop Simple</h4>
                 </div>
-                    <ul className="FooterList__list">
+                    <ul className="footerList__list">
                         <li>
                         <p>Shop electronics</p>
                         </li>
@@ -27,7 +27,7 @@ function FooterList() {
                 <div>
                     <h4>Customer service</h4>
                 </div>
-                <ul className="FooterList__list">
+                <ul className="footerList__list">
                     <li>
                         <p>Accessibility Statement</p>
                     </li>
@@ -56,7 +56,7 @@ function FooterList() {
                 <div>
                     <h4>Join Simple.</h4>
                 </div>
-                <ul className="FooterList__list">
+                <ul className="footerList__list">
                     <li>
                         <p>Our Story</p>
                     </li>

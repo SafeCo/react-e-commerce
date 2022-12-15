@@ -44,25 +44,6 @@ function NavBar() {
     }
     const resizeObserver = new ResizeObserver(handleElementResized);
 
-
-    // useEffect(()=>{
-    //     console.log(height)
-    // },[height])
-
-    // const [matches, setMatches] = useState(
-    //     window.matchMedia("(min-width: 1000px)").matches
-    // )
-    // useEffect(() => {
-    //     window
-    //     .matchMedia("(min-width: 1000px)")
-    //     .addEventListener('change', e => setMatches( e.matches ));
-    //     return ()=>{
-    //         window
-    //         .matchMedia("(min-width: 1000px)")
-    //         .removeEventListener('change', e => setMatches( e.matches ));
-    //     }
-    // }, []);
-
     return (
         <>
             <div 

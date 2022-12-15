@@ -1,0 +1,29 @@
+.accordion__list-title{
+    display: flex;
+    justify-content: space-between;
+    padding: 5px;
+}
+
+.accordion__list-button{
+    cursor: pointer;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    font-size: 2rem;
+    color: white;
+    font-weight: 600;
+}
+
+.accordion__list-containter{
+    overflow: hidden;
+}
+
+.accordion__list{
+    list-style: none;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-bottom: 5px;
+}
+.accordion__list li{
+    margin-top: 2px;
+}

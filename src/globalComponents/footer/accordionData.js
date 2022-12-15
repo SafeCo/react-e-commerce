@@ -2,7 +2,7 @@ export const accordionData = [
     {
         title: "Shop Simple",
         content: (
-            <ul className="footer__list">
+            <ul className="accordion__list">
                 <li>
                 <p>Shop electronics</p>
                 </li>
@@ -21,7 +21,7 @@ export const accordionData = [
     {
         title: "Customer service",
         content: (
-            <ul className="footer__list">
+            <ul className="accordion__list">
                 <li>
                     <p>Accessibility Statement</p>
                 </li>
@@ -49,7 +49,7 @@ export const accordionData = [
     {
         title: "Join Simple.",
         content: (
-            <ul className="footer__list">
+            <ul className="accordion__list">
                 <li>
                     <p>Our Story</p>
                 </li>

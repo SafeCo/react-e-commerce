@@ -15,30 +15,6 @@ import FooterList from './FooterList';
 function Footer() {
     const { matches } = useContext(MediaContext)
     const { mobile} = useContext(MediaContext)
-    const [accordion, setAccordion] = useState([
-        {shop: false},
-        {service: false},
-        {join: false},
-    ])
-
-    const accordionSwitch = (e)=>{
-        const targetName = e.currentTarget.name
-        const test = accordion.map((item)=>{
-            const keyName= Object.keys(item)[0]
-            console.log(keyName)
-            if(keyName === targetName){
-                console.log(item[keyName])
-                return {[targetName] : !item[keyName]}
-            }else{
-                return item
-            }
-            
-        })
-        console.log(test)
-        // setAccordion((e)=>{
-        //     accordion.map
-        // })
-    }
 
     return ( 
         <footer className="footer__container" >
@@ -65,6 +41,7 @@ function Footer() {
                         </li>
                     </ul>
                 </div>
+
                 {mobile ?
                     (<FooterList/>):
                     accordionData.map(({ title, content }) => (

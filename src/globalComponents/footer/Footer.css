@@ -32,21 +32,12 @@
     align-items: center;
     justify-content: space-between;
     margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 .footer__social-icon{
     width: 20px;
 }
-
-                                                    /* FOOTER LISTS */
-.footer__list{
-    list-style: none;
-}
-.footer__list li{
-    margin-top: 2px;
-}
-
-
                                                 /* SIGN UP */
 
 .footer__input-container{
@@ -82,7 +73,6 @@
 
                                                     /* MEDIA QUERIES */
 .mobile{
-    border: solid red 1px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -91,19 +81,4 @@
     padding-right: 20px;
 }
 
-.footer__list-title{
-    display: flex;
-    justify-content: space-between;
-    border: solid lightgray 1px;
-    padding: 5px;
-}
 
-.footer__list-button{
-    cursor: pointer;
-    border: none;
-    outline: none;
-    background-color: transparent;
-    font-size: 2rem;
-    color: white;
-    font-weight: 600;
-}
