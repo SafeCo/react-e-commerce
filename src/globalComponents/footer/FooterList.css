@@ -1,0 +1,7 @@
+
+.FooterList__list{
+    list-style: none;
+}
+.FooterList__list li{
+    margin-top: 2px;
+}

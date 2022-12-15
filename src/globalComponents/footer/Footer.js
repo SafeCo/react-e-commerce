@@ -1,6 +1,8 @@
 import {useContext, useState} from 'react'
 import { MediaContext } from '../../context/MediaContext'
 import './Footer.css'
+import Accordion from './Accordion';
+import { accordionData } from './accordionData';
 
 //social media icons
 import facebookIcon from "./icons/facebook-icon.svg"
@@ -8,6 +10,7 @@ import instagramIcon from "./icons/instagram-icon.svg"
 import twitterIcon from "./icons/twitter-icon.svg"
 import youtubeIcon from "./icons/youtube-icon.svg"
 import emailIcon from "./icons/email-icon.svg"
+import FooterList from './FooterList';
 
 function Footer() {
     const { matches } = useContext(MediaContext)
@@ -19,13 +22,16 @@ function Footer() {
     ])
 
     const accordionSwitch = (e)=>{
-        const targetName = e.target.name
+        const targetName = e.currentTarget.name
         const test = accordion.map((item)=>{
-            console.log(item)
-            return item
-            // if(item.name === targetName){
-            //     return item
-            // }
+            const keyName= Object.keys(item)[0]
+            console.log(keyName)
+            if(keyName === targetName){
+                console.log(item[keyName])
+                return {[targetName] : !item[keyName]}
+            }else{
+                return item
+            }
             
         })
         console.log(test)
@@ -59,89 +65,12 @@ function Footer() {
                         </li>
                     </ul>
                 </div>
-
-                <div className="footer__shop ">
-                    <div className="footer__list-title">
-                        <h4>Shop Simple</h4>
-                        <button 
-                            className="footer__list-button"
-                            name="shop"
-                            onClick={(e)=>{accordionSwitch(e)}}
-                        >
-                            <p>+</p>
-                        </button>
-                    </div>
-                    { mobile &&
-                        <ul className="footer__list">
-                            <li>
-                            <p>Shop electronics</p>
-                            </li>
-                            <li>
-                                <p>Shop clothes</p>
-                            </li>
-                            <li>
-                                <p>Shop jewelery</p>
-                            </li>
-                            <li>
-                                <p>Shop bags</p>
-                            </li> 
-                        </ul>
-                    }
-                </div>
-
-                <div className="footer__service ">
-                    <div>
-                        <h4>Customer service</h4>
-                    </div>
-                    {mobile &&
-                        <ul className="footer__list">
-                            <li>
-                                <p>Accessibility Statement</p>
-                            </li>
-                            <li>
-                                <p>My Account</p>
-                            </li>
-                            <li>
-                                <p>Shipping & Returns</p>
-                            </li>
-                            <li>
-                                <p>FAQ</p>
-                            </li>
-                            <li>
-                                <p>Contact us</p>
-                            </li>
-                            <li>
-                                <p>Social media</p>
-                            </li>
-                            <li>
-                                <p>Store locator</p>
-                            </li>
-                        </ul> 
-                    }              
-                </div>
-
-                <div className="footer__join ">
-                    <div>
-                        <h4>Join Simple.</h4>
-                    </div>
-                    { mobile &&
-                        <ul className="footer__list">
-                            <li>
-                                <p>Our Story</p>
-                            </li>
-                            <li>
-                                <p>Our blog</p>
-                            </li>
-                            <li>
-                                <p>VIP rewards</p>
-                            </li>
-                            <li>
-                                <p>Ambassadors & Affiliates</p>
-                            </li>
-                        </ul>
-                    }
-                    
-                </div>
+                {mobile ?
+                    (<FooterList/>):
+                    accordionData.map(({ title, content }) => (
+                        <Accordion key={title} title={title} content={content} />
+                    ))
+                }
 
                 {matches && 
                     <div className="footer__signUp ">
