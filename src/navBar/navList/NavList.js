@@ -19,7 +19,8 @@ function NavList() {
     }
 
     return (
-        <ul className="navList__container">
+        <div className="navList__container">
+        <ul className="navList__box">
             <motion.li 
             className="navList__item"
             variants={itemVariant}
@@ -75,6 +76,7 @@ function NavList() {
                 </button>
             </motion.li>
         </ul>
+        </div>
     )
 }
 

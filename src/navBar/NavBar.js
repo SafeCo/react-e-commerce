@@ -82,8 +82,7 @@ function NavBar() {
                         <NavList/> : 
                         null
                     }
-
-                    {/* When the icon is clicked the search bar expands from right to left and menu dissappears */}
+                    
                     <div className=" nB__icons__container">
                         <div className="nB__icons-container">
                             <div className="nB__icon-container">

@@ -5,14 +5,15 @@ import Card from './components/Card'
 import Footer from "../globalComponents/footer/Footer"
 import "./HomePage.css"
 import reeds from "../globalImages/reeds.jpg"
-import CategoryBanner from "./components/CategoryBanner"
 import CategoryCarousel from "./components/CategoryCarousel"
 
 function HomePage() {
 
+
   const {navHeight} = useOutletContext()
+  
   const navBarHeight = {
-    height: navHeight? window.innerHeight - navHeight : window.innerHeight - 64
+    height: navHeight? window.innerHeight - navHeight : window.innerHeight - 77
   }
 
   const buttonVariant= {
@@ -30,8 +31,13 @@ function HomePage() {
     <div className="hP__container">
         <div className="hP__heroImage-container" style={navBarHeight}>
             <img className="hP__heroImage" src={reeds}/>
-            <div className="hP__heroImage__text-container">
-              <p className="hP__heroImage__text">Simple elegance </p>
+            <motion.div 
+              className="hP__heroImage__text-container"
+              initial={{opacity: 0}}
+              animate={{opacity: 1}}
+              transition={{duration: 1.5}}
+            >
+              <p className="hP__heroImage__text">Simple.</p>
               <div >
                 <motion.button 
                 className="hP__heroImage__button"
@@ -48,7 +54,7 @@ function HomePage() {
                   <p>SHOP WOMENS</p>
                 </motion.button>
               </div>
-            </div>
+            </motion.div>
             
         </div>
         <main className="hP__main-container">

@@ -62,8 +62,7 @@ function Card() {
         viewport={{once: true}}
         >
             <div className="card__outline">
-                <motion.div  
-                whileHover={{scale: 1.05}}
+                <div  
                 className="card__image-container"
                 onMouseEnter={()=>{setIsHovering(!isHovering)}}
                 onMouseLeave={()=>{setIsHovering(!isHovering)}}
@@ -88,7 +87,7 @@ function Card() {
                     }
                 </AnimatePresence>
                     <img className="card__image" src="https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg" />
-                </motion.div>
+                </div>
                 <motion.div
                 variants={widthVariant}
                 className="card__title-line"

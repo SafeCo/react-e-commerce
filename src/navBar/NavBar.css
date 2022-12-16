@@ -11,8 +11,6 @@
     background-color: white;
     border-bottom: solid lightgray 1px;
     font-size: 1.5rem;
-    padding-left: 10px;
-    padding-right: 10px;
 }
 
 
@@ -76,6 +74,7 @@
 .nB__icon__text{
     text-transform: uppercase;
     font-size: 1.2rem;
+    font-weight: 500;
 }
 
 .nB__icon__button{
