@@ -1,6 +1,9 @@
 // Import Swiper React components
+import { useContext } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import "./CategoryCarousel.css"
+import { MediaContext } from '../../context/MediaContext';
+
 
 
 //Import Images
@@ -13,9 +16,12 @@ import televisionImage from "../../globalImages/television.jpg"
 import 'swiper/css';
 import "swiper/css/navigation";
 import { Navigation } from "swiper";
+import { useEffect } from 'react';
 
 
-function TestCarousel() {
+function CategoryCarousel() {
+
+    const { matches } = useContext(MediaContext)
 
     return (
         <>
@@ -26,8 +32,8 @@ function TestCarousel() {
             <Swiper
                 navigation={true} 
                 modules={[Navigation]}
-                spaceBetween={50}
-                slidesPerView={3}
+                spaceBetween={10}
+                slidesPerView={matches? 4 : 3}
                 // onSlideChange={() => console.log('slide change')}
                 // onSwiper={(swiper) => console.log(swiper)}
             >
@@ -77,4 +83,4 @@ function TestCarousel() {
     )
 }
 
-export default TestCarousel
+export default CategoryCarousel
