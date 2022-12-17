@@ -12,5 +12,8 @@
     color: #212A2F;
 }
 
-
-
+@media only screen and (min-width: 1400px) {
+    :root {
+        font-size: 13px;
+    }
+}

@@ -1,0 +1,5 @@
+1. changing text size according to screen? cant do it without 4k screen tbh
+2. exit animation for "Add to Cart button"
+3. style update for sort By button
+4. consider adding more filters?
+5. individual pages for items?
