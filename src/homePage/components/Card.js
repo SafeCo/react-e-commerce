@@ -1,8 +1,10 @@
-import { useState, useRef, useEffect } from "react"
+import { useState, useContext } from "react"
 import {motion, AnimatePresence} from "framer-motion"
+import { MediaContext } from "../../context/MediaContext"
 import "./Card.css"
 
 function Card() {
+    const { matches } = useContext(MediaContext)
     const [isHovering, setIsHovering] = useState(false)
 
     const containerVariant={
@@ -68,7 +70,7 @@ function Card() {
                 onMouseLeave={()=>{setIsHovering(!isHovering)}}
                 >
                 <AnimatePresence>
-                    {
+                    { matches?
                         isHovering && (
                             <motion.div 
                             className="card__darkBg"
@@ -78,12 +80,16 @@ function Card() {
                             >
                             
                                 <motion.button
+                                className="card__darkBg-button"
                                 variants={buttonVariant}
                                 whileHover="visible"
-
-                                >Shop now</motion.button>
+                                >
+                                Shop now
+                                </motion.button>
                             </motion.div>
                             )
+                            :
+                            (null)
                     }
                 </AnimatePresence>
                     <img className="card__image" src="https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg" />
@@ -98,6 +104,16 @@ function Card() {
                 className="card__title-container">
                     <p>Here is a bag</p>
                 </motion.div>
+                { !matches ?
+                    (
+                        <button className="card__darkBg-button">
+                            Shop now
+                        </button>
+                    ):
+                    (
+                        <div className="fakeButton"></div>
+                    )
+                }
             </div>
         </motion.div>
     )
