@@ -71,7 +71,7 @@ function NavBar() {
                     }
                     <div className="nB__logo__container">
                         <div className="nB__logo-container">
-                            <Link to={"/"} style={{textDecoration: "none", color: "none"}}>
+                            <Link to={"/"} style={{textDecoration: "none", color: "#212A2F"}}>
                                 <h3>Simple.</h3>
                             </Link>
                         </div>

@@ -16,6 +16,7 @@
     width: fit-content;
     padding: 10px;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    background-color: white;
 }
 
 .card__image-container{
@@ -23,6 +24,7 @@
     max-height: 300px;
     max-width: 300px;
     margin: 30px;
+    
 }
 
 .card__darkBg{

@@ -27,14 +27,22 @@
                                                     /* TITLE */
 .product__title-container{
     margin: 10px 10px;
+    font-size: 1.6rem;
+    font-weight: 600;
 }
 .product__title{
-    width: 140px;
+    max-width: 280px;
     overflow: hidden;
     display: inline-block;
     text-align: center;
     text-overflow: ellipsis;
     white-space: nowrap;
+}
+
+                                                    /* BUTTON */
+.product__price-container{
+    font-size: 1.5rem;
+    font-weight: 500;
 }
 
                                                     /* BUTTON */
