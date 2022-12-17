@@ -1,4 +1,4 @@
-import {useEffect, useState, useContext} from 'react'
+import { useContext } from 'react'
 import { CartContext } from '../../../context/CartContext';
 
 import "./CartItem.css"
@@ -45,7 +45,7 @@ function CartItem({item, removeItem}) {
             </div>
 
             <div className="cartItem__price-container">
-                <p >{"£"+item.price}</p>
+                <p >{"£"+item.price.toFixed(2)}</p>
             </div>
 
             <div className="cartItem__removeButton-container" >

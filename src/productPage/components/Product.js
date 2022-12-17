@@ -25,7 +25,7 @@ function Product({product, updateCart}) {
                     <p className="product__title">{product.title}</p>
                 </div>
                 <div className="product__price-container">
-                    <p>{"£" + product.price}</p>
+                    <p>{"£" + product.price.toFixed(2)}</p>
                 </div>
                 <AnimatePresence>
                     { matches?
