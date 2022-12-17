@@ -1,5 +1,6 @@
 .sS__container{
     border-top: solid lightgray 1px;
+    border-bottom: solid lightgray 1px;
     background-color: white;    
     position: absolute;
     z-index: 1;

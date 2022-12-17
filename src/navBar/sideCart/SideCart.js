@@ -40,10 +40,11 @@ function SideCart({modalFlipSwitch}) {
         const totals = cart.map((item)=>{
             return item.price * item.quantity
         })
+        console.log(totals)
         const sum = totals.reduce((total, num)=>{
             return total + num
         }) 
-        return sum
+        return sum.toFixed(2)
     }
     
 
