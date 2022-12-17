@@ -1,21 +1,23 @@
+import { useState, useContext, } from "react"
+import {motion, AnimatePresence} from "framer-motion"
+
+import { MediaContext } from "../../context/MediaContext"
+
 import "./Product.css"
 
 function Product({product, updateCart}) {
-    // const test  = {
-    //     "id": 1,
-    //     "title": "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
-    //     "price": 109.95,
-    //     "description": "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
-    //     "category": "men's clothing",
-    //     "image": "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg",
-    //     "rating": {
-    //         "rate": 3.9,
-    //         "count": 120
-    //     }
-    // 
+    
+    const { matches } = useContext(MediaContext)
+    const [isHovering, setIsHovering] = useState(false)
 
     return (
-        <div className="product__container">
+        <motion.div 
+            className="product__container"
+            initial={{opacity: 0}}
+            animate={{opacity: 1}}
+            onMouseEnter={()=>{setIsHovering(!isHovering)}}
+            onMouseLeave={()=>{setIsHovering(!isHovering)}}
+        >
                 <div className="product__image-container">
                     <img src={product.image} className="product__image" alt={product.title}/>
                 </div>
@@ -25,15 +27,50 @@ function Product({product, updateCart}) {
                 <div className="product__price-container">
                     <p>{"£" + product.price}</p>
                 </div>
-                <div className="product__button-container" >
-                    <button 
-                    onClick={()=>{updateCart(product)}}
-                    className="product__button"
-                    >
-                        ADD TO CART
-                    </button>
-                </div>
-        </div>
+                <AnimatePresence>
+                    { matches?
+                        isHovering ?
+                            (
+                                <div 
+                                    className="product__button-container" 
+                                >
+                                    <motion.button 
+                                    onClick={()=>{updateCart(product)}}
+                                    className="product__button"
+                                    initial={{height:0}}
+                                    animate={{height: 50}}
+                                    exit={{height: 0}}
+                                    transition={{type: "ease"}}
+                                    >
+                                        ADD TO CART
+                                    </motion.button>
+                                </div> 
+                            )
+                            :
+                            (
+                                <div className="fakeButton"></div>
+                            )
+                        :
+                        (
+                            <div 
+                                    className="product__button-container" 
+                                >
+                                    <motion.button 
+                                    onClick={()=>{updateCart(product)}}
+                                    className="product__button"
+                                    initial={{height:0}}
+                                    animate={{height: 50}}
+                                    exit={{height: 0}}
+                                    transition={{type: "ease"}}
+                                    >
+                                        ADD TO CART
+                                    </motion.button>
+                                </div> 
+                        )
+                    }
+                </AnimatePresence>
+                
+        </motion.div>
     )
 }
 
