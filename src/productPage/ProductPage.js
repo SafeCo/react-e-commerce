@@ -1,117 +1,75 @@
-import {useEffect, useState, useContext} from 'react'
-
-import { CartContext } from '../context/CartContext';
-
-import "./ProductPage.css"
-
-import Product from './components/Product'
 import Footer from "../globalComponents/footer/Footer"
-import Sort from './components/Sort';
+import "./ProductPage.css"
+import tempImage from "../globalImages/watch.jpg"
 
 function ProductPage() {
 
-    const {cart, setCart} = useContext(CartContext)
-
-    const updateCart = (product)=>{
-
-        const productExists = cart.find(c => c.id === product.id);
-
-        if (productExists === undefined) {
-            const newObj = {...product}
-            newObj.quantity = 1
-            setCart([...cart, newObj])
-
-        } else {
-            const newObj = {...productExists}
-            const quantity =  parseFloat(newObj.quantity)
-            newObj.quantity = quantity + 1 ;
-
-            setCart(cart.map((item)=>{
-                if(item.id === newObj.id){
-                    return newObj
-                }else{
-                    return item
-                }
-            }))
-        }
+    const data ={
+            "id": 11,
+            "title": "Silicon Power 256GB SSD 3D NAND A55 SLC Cache Performance Boost SATA III 2.5",
+            "price": 109,
+            "description": "3D NAND flash are applied to deliver high transfer speeds Remarkable transfer speeds that enable faster bootup and improved overall system performance. The advanced SLC Cache Technology allows performance boost and longer lifespan 7mm slim design suitable for Ultrabooks and Ultra-slim notebooks. Supports TRIM command, Garbage Collection technology, RAID, and ECC (Error Checking & Correction) to provide the optimized performance and enhanced reliability.",
+            "category": "electronics",
+            "image": "https://fakestoreapi.com/img/71kWymZ+c+L._AC_SX679_.jpg",
+            "rating": {
+                "rate": 4.8,
+                "count": 319
+            }
     }
 
-    const [productList, setProductList] = useState([])
-    useEffect(()=>{
-        fetch('https://fakestoreapi.com/products')
-            .then(res=>res.json())
-            .then((json)=>{
-                setProductList(
-                    json
-                    .map((product)=>product)
-                    .sort((a , b)=>{
-                        return parseFloat(b.rating.rate) - parseFloat(a.rating.rate)
-                    })
-                )
-            })
-            .catch(error => console.log(error))
-    },[])
 
-
-    const [sortFilter , setSortFilter] = useState("Highest Rated")
-
-    useEffect(()=>{
-        sortBy(sortFilter)
-    },[sortFilter])
-
-    const sortBy = (sort)=>{
-        switch(sort){
-            case "Price: Low to High":
-                setProductList(
-                    productList
-                    .map((product)=>product)
-                    .sort((a , b)=>{
-                        return parseFloat(a.price) - parseFloat(b.price)
-                    })
-                )
-                break;
-            case "Price: High to Low":
-                setProductList(
-                    productList
-                    .map((product)=>product)
-                    .sort((a , b)=>{
-                        return parseFloat(b.price) - parseFloat(a.price)
-                    })
-                )
-                break;
-            case "Highest Rated":
-                setProductList(
-                    productList
-                    .map((product)=>product)
-                    .sort((a , b)=>{
-                        return parseFloat(b.rating.rate) - parseFloat(a.rating.rate)
-                    })
-                )
-                break;
-            
-        }
-        
-    }
-    
 
     return (
-        <>
-            <div className="productPage__container">
-                <Sort sortFilter={ sortFilter } setSortFilter={setSortFilter} />
-                
-                <div className="productPage__products-container">
-                    <div className="productPage__products">
-                        {
-                            productList.map((product) => {
-                                return (<Product key={product.id} product={product} updateCart={updateCart} />)
-                            })
-                        }
+        <div className="productPage__container">
+            <div className="productPage__product-container">
+                <div className="productPage__images__container">
+                    <ul className="productPage__sideImages__container">
+
+                        <li className="productPage__sideImage-container">
+                            <img className="productPage__sideImage" src={tempImage} />
+                        </li>
+
+                        <li className="productPage__sideImage-container">
+                            <img className="productPage__sideImage" src={tempImage} />
+                        </li>
+
+                        <li className="productPage__sideImage-container">
+                            <img className="productPage__sideImage" src={tempImage} />
+                        </li>
+                        
+                        <li className="productPage__sideImage-container">
+                            <img className="productPage__sideImage" src={tempImage} />
+                        </li>
+                        
+                        <li className="productPage__sideImage-container">
+                            <img className="productPage__sideImage" src={tempImage} />
+                        </li>
+
+                        <li className="productPage__sideImage-container">
+                            <img className="productPage__sideImage" src={tempImage} />
+                        </li>
+
+                    </ul>
+                    <div className="productPage__mainImage-container">
+                        <img className="productPage__mainImage" src={tempImage} />
                     </div>
-                </div> 
+                </div>
+                
+                <div>
+                    <h2>TITLE</h2>
+                    <p>£200</p>
+                    <p>Tax and duties included</p>
+                    <div>STARS</div>
+                    <div>Description</div>
+                    <div>Add to cart button</div>
+                    
+                </div>
+
+
+
             </div>
             <Footer/>
-        </>
-        
+        </div>
     )
 }
 

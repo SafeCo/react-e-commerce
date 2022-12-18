@@ -1,1 +1,4 @@
-5. individual pages for items?
+1. individual pages for items?
+2. best seller carousel
+3. soemthing extra for homepage
+4. lazyloading for products page
