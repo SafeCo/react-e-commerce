@@ -18,25 +18,24 @@ function Product({product, updateCart}) {
             onMouseEnter={()=>{setIsHovering(!isHovering)}}
             onMouseLeave={()=>{setIsHovering(!isHovering)}}
         >
-                <div className="product__image-container">
-                    <img src={product.image} className="product__image" alt={product.title}/>
-                </div>
-                <div className="product__title-container">
-                    <p className="product__title">{product.title}</p>
-                </div>
-                <div className="product__price-container">
-                    <p>{"£" + product.price.toFixed(2)}</p>
-                </div>
+            <div className="product__image-container">
+                <img src={product.image} className="product__image" alt={product.title}/>
+            </div>
+            <div className="product__title-container">
+                <p className="product__title">{product.title}</p>
+            </div>
+            <div className="product__price-container">
+                <p>{"£" + product.price.toFixed(2)}</p>
+            </div>
+            <div className="product__button-container">
                 <AnimatePresence>
                     { matches?
-                        isHovering ?
+                        isHovering &&
                             (
-                                <div 
-                                    className="product__button-container" 
-                                >
                                     <motion.button 
-                                    onClick={()=>{updateCart(product)}}
                                     className="product__button"
+                                    key="addToCart"
+                                    onClick={()=>{updateCart(product)}}
                                     initial={{height:0}}
                                     animate={{height: 50}}
                                     exit={{height: 0}}
@@ -44,32 +43,20 @@ function Product({product, updateCart}) {
                                     >
                                         ADD TO CART
                                     </motion.button>
-                                </div> 
-                            )
-                            :
-                            (
-                                <div className="fakeButton"></div>
                             )
                         :
                         (
-                            <div 
-                                    className="product__button-container" 
-                                >
-                                    <motion.button 
+                            
+                                    <button 
                                     onClick={()=>{updateCart(product)}}
                                     className="product__button"
-                                    initial={{height:0}}
-                                    animate={{height: 50}}
-                                    exit={{height: 0}}
-                                    transition={{type: "ease"}}
                                     >
                                         ADD TO CART
-                                    </motion.button>
-                                </div> 
+                                    </button>
                         )
                     }
                 </AnimatePresence>
-                
+            </div> 
         </motion.div>
     )
 }

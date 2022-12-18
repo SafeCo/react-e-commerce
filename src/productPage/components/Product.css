@@ -49,6 +49,7 @@
 .product__button-container{
     margin-top: 10px;
     width: 100%;
+    height: 50px;
 }
 
 .product__button{
@@ -61,8 +62,3 @@
     height: 50px;
 }
 
-.fakeButton{
-    margin-top: 10px;
-    width: 100%;
-    height: 50px;
-}
