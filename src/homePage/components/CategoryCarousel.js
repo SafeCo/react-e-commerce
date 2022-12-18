@@ -11,17 +11,19 @@ import fashionImage from "../../globalImages/fashion.jpg"
 import jewelryImage from "../../globalImages/jewelry.jpg"
 import phoneImage from "../../globalImages/phone.jpg"
 import televisionImage from "../../globalImages/television.jpg"
+import essentialsImage from "../../globalImages/essentials.jpg"
+import saleImage from "../../globalImages/watch.jpg"
 
 // Import Swiper styles
 import 'swiper/css';
 import "swiper/css/navigation";
 import { Navigation } from "swiper";
-import { useEffect } from 'react';
 
 
 function CategoryCarousel() {
 
     const { matches } = useContext(MediaContext)
+    const { mobile } = useContext(MediaContext)
 
     return (
         <>
@@ -33,9 +35,7 @@ function CategoryCarousel() {
                 navigation={true} 
                 modules={[Navigation]}
                 spaceBetween={10}
-                slidesPerView={matches? 4 : 3}
-                // onSlideChange={() => console.log('slide change')}
-                // onSwiper={(swiper) => console.log(swiper)}
+                slidesPerView={matches? 5 : mobile? 4 : 3}
             >
                 <SwiperSlide>
                     <div className="cC__card-container" >
@@ -75,6 +75,26 @@ function CategoryCarousel() {
                     </div>
                     <div className="cC__card__title-container">
                         <p>TV's</p>
+                    </div>
+                </div>
+            </SwiperSlide>
+            <SwiperSlide>
+                <div className="cC__card-container" >
+                    <div className="cC__image-container">
+                        <img className="cC__image" src={essentialsImage} />
+                    </div>
+                    <div className="cC__card__title-container">
+                        <p>Essentials</p>
+                    </div>
+                </div>
+            </SwiperSlide>
+            <SwiperSlide>
+                <div className="cC__card-container" >
+                    <div className="cC__image-container">
+                        <img className="cC__image" src={saleImage} />
+                    </div>
+                    <div className="cC__card__title-container">
+                        <p>Sale</p>
                     </div>
                 </div>
             </SwiperSlide>

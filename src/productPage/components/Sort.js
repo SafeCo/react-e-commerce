@@ -1,4 +1,5 @@
 import { useState } from "react"
+import { motion } from "framer-motion"
 import "./Sort.css"
 
 function Sort({sortFilter, setSortFilter}) {
@@ -14,10 +15,9 @@ function Sort({sortFilter, setSortFilter}) {
     })
 
 
-    // ⮝
+
     const [isActive, setIsActive] = useState(false)
     
-
     return (
         <div className="sort__container">
             <div 
@@ -29,7 +29,11 @@ function Sort({sortFilter, setSortFilter}) {
                 <p className="sort__sortBy">Sort By</p>
                 <div className="sort__filter-container">
                     <p>{sortFilter}</p>
-                    <div>⮟</div>
+
+                    <motion.div
+                        initial={{rotate: 0}}
+                        animate={isActive? {rotate: -180} : {rotate: 0}}
+                    >⮟</motion.div>
                 </div>
             </div>
             <div className="sort__box">

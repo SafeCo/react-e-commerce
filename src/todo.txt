@@ -1,3 +1,1 @@
-3. style update for sort By button
-4. consider adding more filters?
 5. individual pages for items?
