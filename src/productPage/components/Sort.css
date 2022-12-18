@@ -3,7 +3,10 @@
     display: flex;
     align-items: flex-end;
     flex-direction: column;
-    padding: 5px 20px;
+    padding-top: 5px;
+    padding-left: 20px;
+    padding-right: 20px;
+
     height: fit-content;
 }
 .sort__box{
@@ -12,7 +15,7 @@
     flex-direction: column;
     max-width: 250px;
     width: 100%;
-    bottom: -110%;
+    top: 100%;
 }
 .sort__filter__container{
     background-color: white;
