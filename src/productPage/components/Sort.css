@@ -1,0 +1,41 @@
+.sort__container{
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    flex-direction: column;
+    padding: 5px 20px;
+    height: fit-content;
+}
+.sort__box{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    max-width: 250px;
+    width: 100%;
+    bottom: -110%;
+}
+.sort__filter__container{
+    background-color: white;
+    cursor: pointer;
+    max-width: 250px;
+    width: 100%;
+    border: solid black 1px;
+    border-radius: 3px;
+    display: flex;
+    flex-direction: column;
+    padding: 5px 20px;
+}
+.sort__sortBy{
+    font-size: 1rem;
+}
+
+.sort__filter-container{
+    display: flex;
+    justify-content: space-between;
+}
+
+.float{
+    position: absolute;
+    top: 0;
+    left: 0;
+}

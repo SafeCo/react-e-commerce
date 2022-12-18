@@ -6,11 +6,11 @@ import "./ProductPage.css"
 
 import Product from './components/Product'
 import Footer from "../globalComponents/footer/Footer"
+import Sort from './components/Sort';
 
 function ProductPage() {
 
     const {cart, setCart} = useContext(CartContext)
-
 
     const updateCart = (product)=>{
 
@@ -45,6 +45,8 @@ function ProductPage() {
     },[])
 
 
+    const [sortFilter , setSortFilter] = useState("Highest Rated")
+
     const sortBy = (sort)=>{
         switch(sort){
             case "Price: Low to High":
@@ -65,7 +67,7 @@ function ProductPage() {
                     })
                 )
                 break;
-            case "Highest rated":
+            case "Highest Rated":
                 setProductList(
                     productList
                     .map((product)=>product)
@@ -92,6 +94,7 @@ function ProductPage() {
                         <option>Highest rated</option>
                     </select>
                 </div>
+                <Sort sortFilter={ sortFilter } setSortFilter={setSortFilter} />
                 
                 <div className="productPage__products-container">
                     <div className="productPage__products">
