@@ -87,7 +87,7 @@ function ProductPage() {
                     </div>
                     <div className="productPage__button-container">
                         <button 
-                        onClick={()=>{updateCart(product)}}
+                        // onClick={()=>{updateCart(product)}}
                         className="productPage__button"
                         >
                             ADD TO CART

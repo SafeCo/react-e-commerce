@@ -10,31 +10,31 @@ import Sort from './components/Sort';
 
 function ProductPage() {
 
-    const {cart, setCart} = useContext(CartContext)
+    const {cart, setCart, updateCart} = useContext(CartContext)
 
-    const updateCart = (product)=>{
+    // const updateCart = (product)=>{
 
-        const productExists = cart.find(c => c.id === product.id);
+    //     const productExists = cart.find(c => c.id === product.id);
 
-        if (productExists === undefined) {
-            const newObj = {...product}
-            newObj.quantity = 1
-            setCart([...cart, newObj])
+    //     if (productExists === undefined) {
+    //         const newObj = {...product}
+    //         newObj.quantity = 1
+    //         setCart([...cart, newObj])
 
-        } else {
-            const newObj = {...productExists}
-            const quantity =  parseFloat(newObj.quantity)
-            newObj.quantity = quantity + 1 ;
+    //     } else {
+    //         const newObj = {...productExists}
+    //         const quantity =  parseFloat(newObj.quantity)
+    //         newObj.quantity = quantity + 1 ;
 
-            setCart(cart.map((item)=>{
-                if(item.id === newObj.id){
-                    return newObj
-                }else{
-                    return item
-                }
-            }))
-        }
-    }
+    //         setCart(cart.map((item)=>{
+    //             if(item.id === newObj.id){
+    //                 return newObj
+    //             }else{
+    //                 return item
+    //             }
+    //         }))
+    //     }
+    // }
 
     const [productList, setProductList] = useState([])
     useEffect(()=>{
