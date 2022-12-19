@@ -69,13 +69,31 @@ function ProductPage() {
                     </div>
                 </div>
                 
-                <div>
-                    <h2>{product.title}</h2>
-                    <p>{product.price}</p>
-                    <p>Tax and duties included</p>
-                    <div>{product.rating.rate}</div>
-                    <div>{product.description}</div>
-                    <div>Add to cart button</div>
+                <div className="productPage__info__container">
+                    <div className="productPage__title-container container-spacing">
+                        <h2>{product.title}</h2>
+                    </div>
+
+                    <div className="productPage__rating-container container-spacing">
+                        <div>{product.rating.rate}</div>
+                    </div>
+
+                    <div className="productPage__price-container container-spacing">
+                        <p>£{product.price.toFixed(2)}</p>
+                        <p>Tax and duties included</p>
+                    </div>
+                    <div className="productPage__description-container container-spacing">
+                        <p>{product.description}</p>
+                    </div>
+                    <div className="productPage__button-container">
+                        <button 
+                        onClick={()=>{updateCart(product)}}
+                        className="productPage__button"
+                        >
+                            ADD TO CART
+                        </button>
+                    </div>
+
                     
                 </div>
 
