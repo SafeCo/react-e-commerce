@@ -1,8 +1,14 @@
-import { useEffect, useState } from "react"
-import Footer from "../globalComponents/footer/Footer"
-import "./ProductPage.css"
-import tempImage from "../globalImages/watch.jpg"
+import { useEffect, useState, useContext } from "react"
 import { useParams } from "react-router-dom"
+import { CartContext } from "../context/CartContext"
+
+
+import "./ProductPage.css"
+
+import Footer from "../globalComponents/footer/Footer"
+
+
+import tempImage from "../globalImages/watch.jpg"
 
 function ProductPage() {
 
@@ -18,6 +24,8 @@ function ProductPage() {
                 "count": 319
             }
     }
+
+    const {updateCart} = useContext(CartContext)
 
 
 // const [product, setProduct] = useState({})
@@ -87,7 +95,7 @@ function ProductPage() {
                     </div>
                     <div className="productPage__button-container">
                         <button 
-                        // onClick={()=>{updateCart(product)}}
+                        onClick={()=>{updateCart(product)}}
                         className="productPage__button"
                         >
                             ADD TO CART

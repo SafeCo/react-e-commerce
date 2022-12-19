@@ -10,7 +10,7 @@ import Sort from './components/Sort';
 
 function ProductPage() {
 
-    const {cart, setCart, updateCart} = useContext(CartContext)
+    const {updateCart} = useContext(CartContext)
 
     // const updateCart = (product)=>{
 
