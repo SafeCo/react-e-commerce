@@ -4,6 +4,7 @@ import {motion, AnimatePresence} from "framer-motion"
 import { MediaContext } from "../../context/MediaContext"
 
 import "./Product.css"
+import { Link } from "react-router-dom"
 
 function Product({product, updateCart}) {
     
@@ -17,10 +18,12 @@ function Product({product, updateCart}) {
             animate={{opacity: 1}}
             onMouseEnter={()=>{setIsHovering(!isHovering)}}
             onMouseLeave={()=>{setIsHovering(!isHovering)}}
-        >
-            <div className="product__image-container">
-                <img src={product.image} className="product__image" alt={product.title}/>
-            </div>
+        >   
+            <Link to={"/products/"+ product.id} >
+                <div className="product__image-container">
+                    <img src={product.image} className="product__image" alt={product.title}/>
+                </div>
+            </Link>
             <div className="product__title-container">
                 <p className="product__title">{product.title}</p>
             </div>

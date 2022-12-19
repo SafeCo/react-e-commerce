@@ -1,10 +1,12 @@
+import { useEffect, useState } from "react"
 import Footer from "../globalComponents/footer/Footer"
 import "./ProductPage.css"
 import tempImage from "../globalImages/watch.jpg"
+import { useParams } from "react-router-dom"
 
 function ProductPage() {
 
-    const data ={
+    const product ={
             "id": 11,
             "title": "Silicon Power 256GB SSD 3D NAND A55 SLC Cache Performance Boost SATA III 2.5",
             "price": 109,
@@ -16,6 +18,18 @@ function ProductPage() {
                 "count": 319
             }
     }
+
+
+// const [product, setProduct] = useState({})
+// const params = useParams()
+
+//     useEffect(()=>{
+//         const url = "https://fakestoreapi.com/products/" + params.id
+//         fetch(url)
+//             .then(res=>res.json(url))
+//             .then((json)=>{ setProduct(json) })
+//             .catch(error => console.log(error))
+//     },[])
 
 
 
@@ -56,11 +70,11 @@ function ProductPage() {
                 </div>
                 
                 <div>
-                    <h2>TITLE</h2>
-                    <p>£200</p>
+                    <h2>{product.title}</h2>
+                    <p>{product.price}</p>
                     <p>Tax and duties included</p>
-                    <div>STARS</div>
-                    <div>Description</div>
+                    <div>{product.rating.rate}</div>
+                    <div>{product.description}</div>
                     <div>Add to cart button</div>
                     
                 </div>

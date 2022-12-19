@@ -52,7 +52,7 @@ function ProductPage() {
             .catch(error => console.log(error))
     },[])
 
-    useEffect(()=>{console.log(productList)},[productList])
+    // useEffect(()=>{console.log(productList)},[productList])
 
     const [sortFilter , setSortFilter] = useState("Highest Rated")
 
