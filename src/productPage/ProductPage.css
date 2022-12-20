@@ -4,31 +4,34 @@
 
 .productPage__product-container{
     display: flex;
-}
+    justify-content: center;
+    padding: 20px 20px;
 
+}
                                                             /*  IMAGES */
 
 .productPage__images__container{
-    border: solid red 1px;
     display: flex;
 }
 
                                                             /* SIDE IMAGES */
 .productPage__sideImages__container{
-    border: solid red 1px;
+    background-color: white;
     display: flex;
     flex-direction: column;
+    margin-right: 20px;
 }
 
 .productPage__sideImage-container{
-    border: solid black 1px;
     display: flex;
     justify-content: center;
     align-items: center;
     max-width: 100px;
     width: 100%;
+    margin-bottom: 15px;
 }
 .productPage__sideImage{
+    cursor: pointer;
     border-radius: 50%;
     aspect-ratio: 1/1;
     object-fit: cover;
@@ -36,24 +39,34 @@
     width: 100%;
 }
 
+.productPage__sideImage:hover{
+    border: solid black 1px;
+}
+
 
                                                             /* MAIN IMAGES */
 
 .productPage__mainImage-container{
-    max-width: 600px;
+    border: solid lightgray 1px;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 100%;
 }
 
 .productPage__mainImage{
     aspect-ratio: 1/1;
-    object-fit: cover;
+    object-fit: contain;
     height: 100%;
     width: 100%;
+    max-width: 500px;
 }
 
                                                             /* INFORMATION */
 .productPage__info__container{
-    border: solid green 1px;
+    display: flex;
+    flex-direction: column;
     max-width: 400px;
     width: 100%;
     padding: 20px 20px;
@@ -70,9 +83,20 @@
 .productPage__rating-container{
     font-size: 1.6rem;
 }
+.productPage__rating-stars{
+    display: flex;
+}
+
+.productPage__rating-review{
+    color: gray;
+    text-decoration: underline;
+    font-size: 1rem;
+}
+
 
 .productPage__price-container{
     font-size: 1.6rem;
+    font-weight: 600;
 }
 
 .productPage__description-container{
@@ -87,11 +111,17 @@
 }
 
 .productPage__button{
-    border: solid #212A2F 1px;
+    border: solid #53c56e 1px;
     cursor: pointer;
     color: white;
     border-radius: 3px;
-    background-color: #212A2F;
+    background-color: #53c56e;
     width: 100%;
     height: 50px;
+    transition: all 0.2s ease-in-out;
 }
+
+.productPage__button:hover{
+    background-color: #40994d;
+}
+
