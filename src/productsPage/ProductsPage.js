@@ -7,6 +7,7 @@ import "./ProductsPage.css"
 import Product from './components/Product'
 import Footer from "../globalComponents/footer/Footer"
 import Sort from './components/Sort';
+import LoadingSpinner from '../productPage/component/LoadingSpinner';
 
 function ProductPage() {
 
@@ -35,6 +36,7 @@ function ProductPage() {
     //         }))
     //     }
     // }
+    const [loaded, setLoaded] = useState(false);
 
     const [productList, setProductList] = useState([])
     useEffect(()=>{
@@ -50,6 +52,9 @@ function ProductPage() {
                 )
             })
             .catch(error => console.log(error))
+            .finally(() => {
+                setLoaded(true);
+            });
     },[])
 
     // useEffect(()=>{console.log(productList)},[productList])
@@ -97,19 +102,26 @@ function ProductPage() {
 
     return (
         <>
-            <div className="productsPage__container">
-                <Sort sortFilter={ sortFilter } setSortFilter={setSortFilter} />
-                
-                <div className="productsPage__products-container">
-                    <div className="productsPage__products">
-                        {
-                            productList.map((product) => {
-                                return (<Product key={product.id} product={product} updateCart={updateCart} />)
-                            })
-                        }
+            {   loaded? 
+                (
+                    <div className="productsPage__container">
+                        <Sort sortFilter={ sortFilter } setSortFilter={setSortFilter} />
+                        
+                        <div className="productsPage__products-container">
+                            <div className="productsPage__products">
+                                {
+                                    productList.map((product) => {
+                                        return (<Product key={product.id} product={product} updateCart={updateCart} />)
+                                    })
+                                }
+                            </div>
+                        </div> 
                     </div>
-                </div> 
-            </div>
+                ):
+                ( 
+                    <LoadingSpinner/> 
+                )
+            }
             <Footer/>
         </>
         
