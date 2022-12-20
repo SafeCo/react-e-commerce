@@ -18,16 +18,15 @@
 .productPage__sideImages__container{
     background-color: white;
     display: flex;
-    flex-direction: column;
     margin-right: 20px;
+    justify-content: center;
 }
 
 .productPage__sideImage-container{
     display: flex;
     justify-content: center;
     align-items: center;
-    max-width: 100px;
-    width: 100%;
+    width: 70px;
     margin-bottom: 15px;
 }
 .productPage__sideImage{
@@ -59,8 +58,9 @@
     aspect-ratio: 1/1;
     object-fit: contain;
     height: 100%;
-    width: 100%;
     max-width: 500px;
+    min-width:300px;
+    width: 100%;
 }
 
                                                             /* INFORMATION */
@@ -132,3 +132,14 @@
     background-color: #40994d;
 }
 
+@media only screen and (max-width: 700px) {
+    .productPage__product-container {
+        flex-direction: column;
+    }
+    .productPage__images__container{
+        flex-direction: column;
+    }
+    .productPage__sideImages__container{
+        margin-top: 20px;
+    }
+}

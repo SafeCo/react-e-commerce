@@ -2,6 +2,8 @@ import { useEffect, useState, useContext } from "react"
 import { useParams } from "react-router-dom"
 import { AnimatePresence, motion } from "framer-motion"
 import { CartContext } from "../context/CartContext"
+import { MediaContext } from '../context/MediaContext';
+
 
 
 import "./ProductPage.css"
@@ -9,8 +11,8 @@ import LoadingSpinner from "./component/LoadingSpinner"
 import Footer from "../globalComponents/footer/Footer"
 
 
-import tempImage from "../globalImages/watch.jpg"
 import Rating from "./component/Rating"
+import SideImages from "./component/SideImages";
 
 function ProductPage() {
 
@@ -27,6 +29,7 @@ function ProductPage() {
     //         }
     // }
 
+    const {mobile} = useContext(MediaContext)
     const {updateCart} = useContext(CartContext)
     const params = useParams()
 
@@ -56,36 +59,19 @@ function ProductPage() {
                         animate={{opacity: 1}}
                     >
                         <div className="productPage__images__container">
-                            <ul className="productPage__sideImages__container">
-
-                                <li className="productPage__sideImage-container">
-                                    <img className="productPage__sideImage" src={tempImage} />
-                                </li>
-
-                                <li className="productPage__sideImage-container">
-                                    <img className="productPage__sideImage" src={tempImage} />
-                                </li>
-
-                                <li className="productPage__sideImage-container">
-                                    <img className="productPage__sideImage" src={tempImage} />
-                                </li>
-                                
-                                <li className="productPage__sideImage-container">
-                                    <img className="productPage__sideImage" src={tempImage} />
-                                </li>
-                                
-                                <li className="productPage__sideImage-container">
-                                    <img className="productPage__sideImage" src={tempImage} />
-                                </li>
-
-                                <li className="productPage__sideImage-container">
-                                    <img className="productPage__sideImage" src={tempImage} />
-                                </li>
-
-                            </ul>
+                            { mobile &&
+                                <ul className="productPage__sideImages__container">
+                                    <SideImages/>
+                                </ul>
+                            }
                             <div className="productPage__mainImage-container">
                                 <img className="productPage__mainImage" src={product.image} />
                             </div>
+                            { !mobile &&
+                                <ul className="productPage__sideImages__container">
+                                    <SideImages/>
+                                </ul>
+                            }
                         </div>
                         
                         <div className="productPage__info__container">
