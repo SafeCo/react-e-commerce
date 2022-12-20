@@ -1,22 +1,27 @@
-import { useEffect } from "react"
 import "./Rating.css"
+import Stars from "./Stars"
 
 function Rating({rating}) {
-    useEffect(()=>{
-        const ratingVar = (rating * 2).toFixed(1) / 10
-        document.documentElement.style.setProperty("--rating", ratingVar)
-    },[])
+    const newValue = rating*20
+    const newPercent = newValue.toString() + "%"
+
+    const style ={
+        width: newPercent
+    }
 
     return (
         <div className="rating__container">
-            <div className="stars" >
-                <div className="bg">⭐⭐⭐⭐⭐</div>
+            <div className="rating__stars-container">
+                <div className="rating__goldStars-container" style={style}>
+                    <Stars/>
+                </div>
+                <div className="rating__greyStars-container">
+                    <Stars/>
+                </div>
             </div>
+            
         </div>
     )
 }
 
 export default Rating
-
-
-

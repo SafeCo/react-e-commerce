@@ -95,14 +95,21 @@
 
 
 .productPage__price-container{
-    font-size: 1.6rem;
+    font-size: 3rem;
     font-weight: 600;
+}
+.productPage__price-container p:last-child{
+    font-size: 1rem;
 }
 
 .productPage__description-container{
     font-size: 1.6rem;
 }
 
+.productPage__description-container p:first-child{
+    text-decoration: underline;
+    font-weight: 600;
+}
 
 .productPage__button-container{
     margin-top: 10px;

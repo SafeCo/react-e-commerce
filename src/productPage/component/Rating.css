@@ -1,23 +1,26 @@
-.rating__container {
-    display: inline-flex;
-    flex-direction: column;
+.rating__container{
+    width: fit-content;
+    margin-right: 5px;
 }
 
-.stars {
+.rating__stars-container{
     position: relative;
-    display: inline-block;
 }
 
-.bg {
-    opacity: 0.35;
-    filter: grayscale(1);
+.rating__goldStars-container{
+    overflow: hidden;
+    display: flex;
 }
-
-.stars::after {
-    content: '⭐⭐⭐⭐⭐';
+.rating__greyStars-container{
     position: absolute;
     top: 0;
     left: 0;
-    width: calc(100% * var(--rating));
-    overflow: hidden;
+    z-index: -1;
+    display: flex;
+    filter: grayscale(1);
+}
+
+.rating__image{
+    width: 20px;
+    margin-left: 3px;
 }
