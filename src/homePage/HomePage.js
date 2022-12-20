@@ -6,6 +6,7 @@ import Footer from "../globalComponents/footer/Footer"
 import "./HomePage.css"
 import reeds from "../globalImages/reeds.jpg"
 import CategoryCarousel from "./components/CategoryCarousel"
+import CardCarousel from "./components/CardCarousel"
 
 function HomePage() {
 
@@ -61,14 +62,11 @@ function HomePage() {
           <div>
             <CategoryCarousel/>
           </div>
-          
           <div className="hP__main-title">
               <p>Our best sellers</p>
           </div>
           <div className="hP__main-cards-container">
-            <Card/>
-            <Card/>
-            <Card/>
+            <CardCarousel/>
           </div>
 
         </main>
