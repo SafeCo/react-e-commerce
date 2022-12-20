@@ -1,0 +1,26 @@
+.cG__container{
+    --gap: 16px;
+    --num-cols: 4;
+    --row-height: 300px;
+
+    padding: var(--gap);
+    display: grid;
+    grid-template-columns: repeat( var(--num-cols) ,1fr);
+    grid-auto-rows: var(--row-height);
+    gap: var(--gap);
+}
+
+.cG__container img{
+    height: 100%;
+    width: 100%;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+}
+
+.image-grid-col-2{
+    grid-column: span 2;
+}
+
+.image-grid-row-2{
+    grid-row: span 2;
+}

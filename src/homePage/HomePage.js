@@ -7,6 +7,7 @@ import "./HomePage.css"
 import reeds from "../globalImages/reeds.jpg"
 import CategoryCarousel from "./components/CategoryCarousel"
 import CardCarousel from "./components/CardCarousel"
+import CategoryGrid from "./components/CategoryGrid"
 
 function HomePage() {
 
@@ -62,6 +63,8 @@ function HomePage() {
           <div>
             <CategoryCarousel/>
           </div>
+          <CategoryGrid/>
+
           <div className="hP__main-title">
               <p>Our best sellers</p>
           </div>
