@@ -1,0 +1,23 @@
+.rating__container {
+    display: inline-flex;
+    flex-direction: column;
+}
+
+.stars {
+    position: relative;
+    display: inline-block;
+}
+
+.bg {
+    opacity: 0.35;
+    filter: grayscale(1);
+}
+
+.stars::after {
+    content: '⭐⭐⭐⭐⭐';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: calc(100% * var(--rating));
+    overflow: hidden;
+}
