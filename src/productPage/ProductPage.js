@@ -101,6 +101,7 @@ function ProductPage() {
                             <p>Tax and duties included</p>
                         </div>
                         <div className="productPage__description-container container-spacing">
+                            <p>Description</p>
                             <p>{product.description}</p>
                         </div>
                         <div className="productPage__button-container">
