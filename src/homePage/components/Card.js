@@ -1,24 +1,11 @@
 import { useState, useContext } from "react"
-import {motion, AnimatePresence} from "framer-motion"
+import { motion } from "framer-motion"
 import { MediaContext } from "../../context/MediaContext"
 import "./Card.css"
 
 function Card() {
     const { matches } = useContext(MediaContext)
     const [isHovering, setIsHovering] = useState(false)
-
-    const containerVariant={
-        hidden:{
-            opacity: 0
-        },
-        visible: {
-            opacity: 1,
-            transition: {
-                when:"beforeChildren",
-                duration:1
-            }
-        }
-    }
 
     const buttonVariant= {
         visible : {
@@ -31,54 +18,17 @@ function Card() {
         },
     }
 
-    const widthVariant={
-        hidden:{
-            width: "0%"
-        },
-        visible: {
-            width: "90%",
-            transition:{
-                duration: 0.4
-            }
-        }
-    }
-
-    const appearVariant={
-        hidden: {
-            opacity: 0
-        },
-        visible:{
-            opacity: 1,
-            transition: {
-                duration: 0.5
-            }
-        }
-    }
-
     return (
-        <motion.div 
-        className="card__container"
-        variants={containerVariant}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{once: true}}
-        >
+        <div className="card__container">
             <div className="card__outline">
                 <div  
                 className="card__image-container"
                 onMouseEnter={()=>{setIsHovering(!isHovering)}}
                 onMouseLeave={()=>{setIsHovering(!isHovering)}}
                 >
-                <AnimatePresence>
                     { matches?
                         isHovering && (
-                            <motion.div 
-                            className="card__darkBg"
-                            initial={{ opacity: 0 }}
-                            animate={{ opacity: 1 }}
-                            exit={{ opacity: 0 }}
-                            >
-                            
+                            <div className="card__darkBg">
                                 <motion.button
                                 className="card__darkBg-button"
                                 variants={buttonVariant}
@@ -86,24 +36,21 @@ function Card() {
                                 >
                                 Shop now
                                 </motion.button>
-                            </motion.div>
+                            </div>
                             )
                             :
                             (null)
                     }
-                </AnimatePresence>
                     <img className="card__image" src="https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg" />
                 </div>
-                <motion.div
-                variants={widthVariant}
+                <div
                 className="card__title-line"
                 >
-                </motion.div>
-                <motion.div 
-                variants={appearVariant}
+                </div>
+                <div 
                 className="card__title-container">
                     <p>Here is a bag</p>
-                </motion.div>
+                </div>
                 { !matches ?
                     (
                         <button className="card__darkBg-button">
@@ -115,7 +62,7 @@ function Card() {
                     )
                 }
             </div>
-        </motion.div>
+        </div>
     )
 }
 
