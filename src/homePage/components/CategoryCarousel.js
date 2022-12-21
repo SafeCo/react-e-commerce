@@ -13,6 +13,8 @@ import phoneImage from "../../globalImages/phone.jpg"
 import televisionImage from "../../globalImages/television.jpg"
 import essentialsImage from "../../globalImages/essentials.jpg"
 import saleImage from "../../globalImages/watch.jpg"
+import homeImage from "../../globalImages/home.jpg"
+import healthImage from "../../globalImages/health.jpg"
 
 // Import Swiper styles
 import 'swiper/css';
@@ -95,6 +97,26 @@ function CategoryCarousel() {
                     </div>
                     <div className="cC__card__title-container">
                         <p>Sale</p>
+                    </div>
+                </div>
+            </SwiperSlide>
+            <SwiperSlide>
+                <div className="cC__card-container" >
+                    <div className="cC__image-container">
+                        <img className="cC__image" src={homeImage} />
+                    </div>
+                    <div className="cC__card__title-container">
+                        <p>Home</p>
+                    </div>
+                </div>
+            </SwiperSlide>
+            <SwiperSlide>
+                <div className="cC__card-container" >
+                    <div className="cC__image-container">
+                        <img className="cC__image" src={healthImage} />
+                    </div>
+                    <div className="cC__card__title-container">
+                        <p>Health</p>
                     </div>
                 </div>
             </SwiperSlide>
