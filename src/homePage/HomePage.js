@@ -1,7 +1,8 @@
+import { useContext } from "react"
 import {motion } from "framer-motion"
 import { useOutletContext } from "react-router-dom"
+import { MediaContext } from "../context/MediaContext"
 
-import Card from './components/Card'
 import Footer from "../globalComponents/footer/Footer"
 import "./HomePage.css"
 import reeds from "../globalImages/reeds.jpg"
@@ -11,7 +12,7 @@ import CategoryGrid from "./components/CategoryGrid"
 
 function HomePage() {
 
-
+  const { mobile } = useContext(MediaContext)
   const {navHeight} = useOutletContext()
   
   const navBarHeight = {
@@ -61,9 +62,11 @@ function HomePage() {
         </div>
         <main className="hP__main-container">
           <div>
-            <CategoryCarousel/>
+            { mobile ?
+              (<CategoryGrid/>) :
+              (<CategoryCarousel/>)
+            }
           </div>
-          <CategoryGrid/>
 
           <div className="hP__main-title">
               <p>Our best sellers</p>

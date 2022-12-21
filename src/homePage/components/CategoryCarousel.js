@@ -29,10 +29,9 @@ function CategoryCarousel() {
 
     return (
         <>
-            <div className="cC__title-container">
+            <div className="hP__title-container">
                 <p>Shop by category</p>
-            </div>
-            
+            </div>            
             <Swiper
                 navigation={true} 
                 modules={[Navigation]}
