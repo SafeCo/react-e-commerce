@@ -2,6 +2,7 @@ import { useContext } from "react"
 import {motion } from "framer-motion"
 import { useOutletContext } from "react-router-dom"
 import { MediaContext } from "../context/MediaContext"
+import { Link } from "react-router-dom"
 
 import Footer from "../globalComponents/footer/Footer"
 import "./HomePage.css"
@@ -42,20 +43,24 @@ function HomePage() {
             >
               <p className="hP__heroImage__text">Simple.</p>
               <div >
-                <motion.button 
-                className="hP__heroImage__button"
-                variants={buttonVariant}
-                whileHover="visible"
-                >
-                  <p>SHOP MENS</p>
-                </motion.button>
-                <motion.button 
-                className="hP__heroImage__button"
-                variants={buttonVariant}
-                whileHover="visible"
-                >
-                  <p>SHOP WOMENS</p>
-                </motion.button>
+                <Link to={"/products"}>
+                  <motion.button 
+                  className="hP__heroImage__button"
+                  variants={buttonVariant}
+                  whileHover="visible"
+                  >
+                    <p>SHOP MENS</p>
+                  </motion.button>
+                </Link>
+                <Link to={"/products"}>
+                  <motion.button 
+                  className="hP__heroImage__button"
+                  variants={buttonVariant}
+                  whileHover="visible"
+                  >
+                    <p>SHOP WOMENS</p>
+                  </motion.button>
+                </Link>
               </div>
             </motion.div>
             

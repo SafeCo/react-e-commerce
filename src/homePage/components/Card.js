@@ -43,13 +43,11 @@ function Card() {
                     }
                     <img className="card__image" src="https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg" />
                 </div>
-                <div
-                className="card__title-line"
-                >
-                </div>
+                <div className="card__title-line"></div>
                 <div 
-                className="card__title-container">
-                    <p>Here is a bag</p>
+                className="card__text-container">
+                    <h4>Bag</h4>
+                    <p>£20.00</p>
                 </div>
                 { !matches ?
                     (

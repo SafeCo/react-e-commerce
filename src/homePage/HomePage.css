@@ -27,13 +27,13 @@
 .hP__heroImage__text{
     font-size: 8rem;
     color: white;
-    margin: 20px 0;
 }
 
 .hP__heroImage__button{
     cursor: pointer;
     outline: none;
     border: none;
+    margin-top: 20px;
     margin-right: 50px;
     height: 50px;
     width: 150px;

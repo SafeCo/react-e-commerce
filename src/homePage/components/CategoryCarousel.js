@@ -29,11 +29,11 @@ function CategoryCarousel() {
 
     return (
         <>
-            <div className="hP__title-container">
+            <div className="cC__title-container">
                 <p>Shop by category</p>
             </div>            
             <Swiper
-                navigation={true} 
+                navigation={mobile? true : false} 
                 modules={[Navigation]}
                 spaceBetween={10}
                 slidesPerView={matches? 5 : mobile? 4 : 3}

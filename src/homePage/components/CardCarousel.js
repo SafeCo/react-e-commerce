@@ -1,3 +1,5 @@
+import { useContext } from 'react';
+import { MediaContext } from '../../context/MediaContext';
 import { Swiper, SwiperSlide } from 'swiper/react';
 // Import Swiper styles
 import 'swiper/css';
@@ -7,10 +9,13 @@ import { Navigation } from "swiper";
 import Card from "./Card"
 
 function CardCarousel() {
+
+    const { matches } = useContext(MediaContext)
+
     return (
         <>
             <Swiper
-                navigation={true} 
+                navigation={matches ? true : false} 
                 modules={[Navigation]}
                 spaceBetween={10}
                 slidesPerView={ 3}
