@@ -1,4 +1,4 @@
-import starIcon from "../starIcon.svg"
+import starIcon from "../icons/starIcon.svg"
 
 export default function Stars() {
     return (

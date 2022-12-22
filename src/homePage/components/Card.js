@@ -41,7 +41,7 @@ function Card() {
                             :
                             (null)
                     }
-                    <img className="card__image" src="https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg" />
+                    <img className="card__image" src="https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg" alt="bag" />
                 </div>
                 <div className="card__title-line"></div>
                 <div 

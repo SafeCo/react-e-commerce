@@ -1,4 +1,0 @@
-1. best seller carousel
-2. soemthing extra for homepage
-3. lazyloading for products page
-

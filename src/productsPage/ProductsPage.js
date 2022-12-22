@@ -12,33 +12,11 @@ import LoadingSpinner from '../productPage/component/LoadingSpinner';
 function ProductPage() {
 
     const {updateCart} = useContext(CartContext)
-
-    // const updateCart = (product)=>{
-
-    //     const productExists = cart.find(c => c.id === product.id);
-
-    //     if (productExists === undefined) {
-    //         const newObj = {...product}
-    //         newObj.quantity = 1
-    //         setCart([...cart, newObj])
-
-    //     } else {
-    //         const newObj = {...productExists}
-    //         const quantity =  parseFloat(newObj.quantity)
-    //         newObj.quantity = quantity + 1 ;
-
-    //         setCart(cart.map((item)=>{
-    //             if(item.id === newObj.id){
-    //                 return newObj
-    //             }else{
-    //                 return item
-    //             }
-    //         }))
-    //     }
-    // }
     const [loaded, setLoaded] = useState(false);
-
     const [productList, setProductList] = useState([])
+    const [sortFilter , setSortFilter] = useState("Highest Rated")
+
+
     useEffect(()=>{
         fetch('https://fakestoreapi.com/products')
             .then(res=>res.json())
@@ -56,10 +34,6 @@ function ProductPage() {
                 setLoaded(true);
             });
     },[])
-
-    // useEffect(()=>{console.log(productList)},[productList])
-
-    const [sortFilter , setSortFilter] = useState("Highest Rated")
 
     useEffect(()=>{
         sortBy(sortFilter)
@@ -94,7 +68,15 @@ function ProductPage() {
                     })
                 )
                 break;
-            
+            default:
+                setProductList(
+                    productList
+                    .map((product)=>product)
+                    .sort((a , b)=>{
+                        return parseFloat(b.rating.rate) - parseFloat(a.rating.rate)
+                    })
+                )
+                break;
         }
         
     }

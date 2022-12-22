@@ -7,12 +7,6 @@ import HamburgerMenu from '../../navBar/hamburgerMenu/HamburgerMenu'
 import SideCart from '../../navBar/sideCart/SideCart'
 import SearchSection from '../../navBar/searchSection/SearchSection'
 
-//HOW TO USE:
-// This component receives the following props children, modalState and modalSwitch
-// Children is the component this component wraps arround
-// modalState is the prop which is sent to this component to open and close
-// modalSwitch is the prop function which activates to switch the modalState in the parent component
-
 export default function ModalWrapper(props){
 
     const [modalChild, setModalChild]= useState("")

@@ -19,18 +19,6 @@ function HamburgerMenu({modalFlipSwitch}) {
             }
         }
     }
-    // const boxExitVariant={
-    //     hidden:{
-    //         x: "0"
-    //     },
-    //     visible: {
-    //         x: "-100%",
-    //         transition: {
-    //             when:"beforeChildren",
-    //             duration:0.4
-    //         }
-    //     }
-    // }
 
     return (
         <motion.div 

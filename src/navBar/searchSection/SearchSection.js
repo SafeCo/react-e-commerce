@@ -39,6 +39,7 @@ function SearchSection({search, setSearch, matches}) {
         visible:{
             opacity: 1,
             transition: {
+                delay: 0.1,
                 duration: 0.3
             }
         }
@@ -94,21 +95,21 @@ function SearchSection({search, setSearch, matches}) {
                                     <div className="sS__products__container" >
                                         <div className="sS__product-container">
                                             <div className="sS__image-container">
-                                                <img className="sS__image"   src="https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg" />
+                                                <img className="sS__image"   src="https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg" alt="placeholder"/>
                                             </div>
                                             <p>A simple bag</p>
                                         </div>
 
                                         <div className="sS__product-container">
                                             <div className="sS__image-container">
-                                                <img className="sS__image"   src="https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg" />
+                                                <img className="sS__image"   src="https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg" alt="placeholder"/>
                                             </div>
                                             <p>A simple bag</p>
                                         </div>
 
                                         <div className="sS__product-container">
                                             <div className="sS__image-container">
-                                                <img className="sS__image"   src="https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg" />
+                                                <img className="sS__image"   src="https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg" alt="placeholder"/>
                                             </div>
                                             <p>A simple bag</p>
                                         </div>
