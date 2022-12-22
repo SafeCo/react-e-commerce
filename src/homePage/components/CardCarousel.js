@@ -11,14 +11,14 @@ import Card from "./Card"
 function CardCarousel() {
 
     const { matches } = useContext(MediaContext)
-
+    const { mobile } = useContext(MediaContext)
     return (
         <>
             <Swiper
                 navigation={matches ? true : false} 
                 modules={[Navigation]}
                 spaceBetween={10}
-                slidesPerView={ 3}
+                slidesPerView={mobile? 3 : 1}
             >
                 <SwiperSlide>
                     <Card/>
