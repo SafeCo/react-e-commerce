@@ -1,0 +1,33 @@
+{
+  "files": {
+    "main.css": "/react-e-commerce/static/css/main.a34ddbe0.css",
+    "main.js": "/react-e-commerce/static/js/main.3305df7e.js",
+    "static/media/health.jpg": "/react-e-commerce/static/media/health.4ab42ce3235909f6487a.jpg",
+    "static/media/essentials.jpg": "/react-e-commerce/static/media/essentials.f4d94b4be37f8de6d93c.jpg",
+    "static/media/fashion.jpg": "/react-e-commerce/static/media/fashion.7703c74d00adc7f6d89f.jpg",
+    "static/media/jewelry.jpg": "/react-e-commerce/static/media/jewelry.5110430967a1a494d24e.jpg",
+    "static/media/home.jpg": "/react-e-commerce/static/media/home.7986795765daf9387b8b.jpg",
+    "static/media/parachute.jpg": "/react-e-commerce/static/media/parachute.54ebf07361d922b9362b.jpg",
+    "static/media/reeds.jpg": "/react-e-commerce/static/media/reeds.b02d4afa1ab474b17ee2.jpg",
+    "static/media/phone.jpg": "/react-e-commerce/static/media/phone.4652a6830c489a30a246.jpg",
+    "static/media/television.jpg": "/react-e-commerce/static/media/television.0c3ce0d3077f4b164c62.jpg",
+    "static/media/watch.jpg": "/react-e-commerce/static/media/watch.dbfc8dc384615148dd77.jpg",
+    "static/media/search-icon.svg": "/react-e-commerce/static/media/search-icon.dcc917b4aaedba50220f7e8a520b49a2.svg",
+    "static/media/instagram-icon.svg": "/react-e-commerce/static/media/instagram-icon.a7077d7901e7a3e064c9659384556917.svg",
+    "static/media/twitter-icon.svg": "/react-e-commerce/static/media/twitter-icon.d6bfc3d4806b93472ee7a4e00ef9c26a.svg",
+    "static/media/shopping-cart-icon.svg": "/react-e-commerce/static/media/shopping-cart-icon.3124b5b1df69e0fd5a1d161e33888711.svg",
+    "static/media/youtube-icon.svg": "/react-e-commerce/static/media/youtube-icon.e44f9bf73c16c04c08d6034f106cae72.svg",
+    "index.html": "/react-e-commerce/index.html",
+    "static/media/starIcon.svg": "/react-e-commerce/static/media/starIcon.9fa3cf47e9e69a2acee5e5e3d1a5dee1.svg",
+    "static/media/account-icon.svg": "/react-e-commerce/static/media/account-icon.1adde3693ae4d5098f41bdb328e60d0e.svg",
+    "static/media/facebook-icon.svg": "/react-e-commerce/static/media/facebook-icon.ca4dfacb6158211de3602b6513cba178.svg",
+    "static/media/email-icon.svg": "/react-e-commerce/static/media/email-icon.4ed4ecbf3c30ff95e4b67c55e701a7fb.svg",
+    "static/media/hamburger-icon.svg": "/react-e-commerce/static/media/hamburger-icon.83c0d98bc5dc5d819f98077ee4f63345.svg",
+    "main.a34ddbe0.css.map": "/react-e-commerce/static/css/main.a34ddbe0.css.map",
+    "main.3305df7e.js.map": "/react-e-commerce/static/js/main.3305df7e.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.a34ddbe0.css",
+    "static/js/main.3305df7e.js"
+  ]
+}
