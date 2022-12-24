@@ -88,12 +88,13 @@ function ProductPage() {
                 (
                     <div className="productsPage__container">
                         <Sort sortFilter={ sortFilter } setSortFilter={setSortFilter} />
-                        
                         <div className="productsPage__products-container">
                             <div className="productsPage__products">
                                 {
                                     productList.map((product) => {
-                                        return (<Product key={product.id} product={product} updateCart={updateCart} />)
+                                        return (
+                                                <Product key={product.id} product={product} updateCart={updateCart} />
+                                            )
                                     })
                                 }
                             </div>

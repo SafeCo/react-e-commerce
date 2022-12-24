@@ -1,4 +1,4 @@
-import { useState, useContext, } from "react"
+import { useState, useContext } from "react"
 import {motion, AnimatePresence} from "framer-motion"
 
 import { MediaContext } from "../../context/MediaContext"
@@ -22,7 +22,13 @@ function Product({product, updateCart}) {
         >   
             <Link to={"/products/"+ product.id} >
                 <div className="product__image-container">
-                    <img src={product.image} className="product__image" style={{display: loading ?  "none" : "block" }} alt={product.title} onLoad={()=>setLoading(false)}/>
+                    <img 
+                        src={product.image} 
+                        className="product__image" 
+                        style={{display: loading ?  "none" : "block" }} 
+                        alt={product.title} 
+                        onLoad={()=>setLoading(false)}
+                    />
                     <div className="product__image__load" style={{display: loading ? "block" : "none"}}>
                         <ProductSpinner/>
                     </div>
