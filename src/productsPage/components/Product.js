@@ -5,9 +5,10 @@ import { MediaContext } from "../../context/MediaContext"
 
 import "./Product.css"
 import { Link } from "react-router-dom"
+import ProductSpinner from "../../productPage/component/ProductSpinner"
 
 function Product({product, updateCart}) {
-    
+    const [ loading, setLoading] = useState(true)
     const { matches } = useContext(MediaContext)
     const [isHovering, setIsHovering] = useState(false)
 
@@ -21,7 +22,10 @@ function Product({product, updateCart}) {
         >   
             <Link to={"/products/"+ product.id} >
                 <div className="product__image-container">
-                    <img src={product.image} className="product__image" alt={product.title}/>
+                    <img src={product.image} className="product__image" style={{display: loading ?  "none" : "block" }} alt={product.title} onLoad={()=>setLoading(false)}/>
+                    <div className="product__image__load" style={{display: loading ? "block" : "none"}}>
+                        <ProductSpinner/>
+                    </div>
                 </div>
             </Link>
             <div className="product__title-container">

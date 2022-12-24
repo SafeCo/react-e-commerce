@@ -7,7 +7,7 @@ import "./ProductsPage.css"
 import Product from './components/Product'
 import Footer from "../globalComponents/footer/Footer"
 import Sort from './components/Sort';
-import LoadingSpinner from '../productPage/component/LoadingSpinner';
+import LoadingSpinner from "../globalComponents/loadingSpinner/LoadingSpinner";
 
 function ProductPage() {
 

@@ -7,7 +7,7 @@ import { MediaContext } from '../context/MediaContext';
 
 
 import "./ProductPage.css"
-import LoadingSpinner from "./component/LoadingSpinner"
+import LoadingSpinner from "../globalComponents/loadingSpinner/LoadingSpinner"
 import Footer from "../globalComponents/footer/Footer"
 
 
