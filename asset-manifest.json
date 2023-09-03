@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/react-e-commerce/static/css/main.a91314fe.css",
-    "main.js": "/react-e-commerce/static/js/main.551ab9a9.js",
+    "main.js": "/react-e-commerce/static/js/main.c4808afd.js",
     "static/media/health.jpg": "/react-e-commerce/static/media/health.4ab42ce3235909f6487a.jpg",
     "static/media/essentials.jpg": "/react-e-commerce/static/media/essentials.f4d94b4be37f8de6d93c.jpg",
     "static/media/fashion.jpg": "/react-e-commerce/static/media/fashion.7703c74d00adc7f6d89f.jpg",
@@ -24,10 +24,10 @@
     "static/media/email-icon.svg": "/react-e-commerce/static/media/email-icon.4ed4ecbf3c30ff95e4b67c55e701a7fb.svg",
     "static/media/hamburger-icon.svg": "/react-e-commerce/static/media/hamburger-icon.83c0d98bc5dc5d819f98077ee4f63345.svg",
     "main.a91314fe.css.map": "/react-e-commerce/static/css/main.a91314fe.css.map",
-    "main.551ab9a9.js.map": "/react-e-commerce/static/js/main.551ab9a9.js.map"
+    "main.c4808afd.js.map": "/react-e-commerce/static/js/main.c4808afd.js.map"
   },
   "entrypoints": [
     "static/css/main.a91314fe.css",
-    "static/js/main.551ab9a9.js"
+    "static/js/main.c4808afd.js"
   ]
 }
