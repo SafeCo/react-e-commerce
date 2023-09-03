@@ -16,7 +16,7 @@ export default function NavListItem({item}) {
     }
 
     return (
-        <Link to={"/products"} style={{textDecoration: "none", color: "none"}}>
+        <Link to={"products"} style={{textDecoration: "none", color: "none"}}>
             <motion.li 
             className="navList__item"
             variants={itemVariant}
